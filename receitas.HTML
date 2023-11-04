@@ -7,10 +7,13 @@
     <title>Devaneios</title>
     <link rel="stylesheet" href="cssReset.css">
     <link rel="stylesheet" href="receitas.css">
+    <script src="devaneiosMaritimos.js"></script>
 </head>
 
 <body>
-    <section id="secao_receita">
+    <section id="secao_pratos">
+
+        <!-- Minha navbar -->
         <header id="navbar">
             <div class="area"> <a href="receitas.HTML"> Receitas </a></div>
             <div class="area"> <a href="jogo.HTML"> Jogo </a> </div>
@@ -18,6 +21,9 @@
             <div class="area"> <a href="historias.HTML"> Histórias </a></div>
             <div class="area "><a href="entrar.HTML"> Entrar </a></div>
         </header>
+
+        <!-- conteudo seleção pratos  -->
+
         <div id="div_conteudoPagina">
             <div id="div_titulo">
                 <h1>Receitas</h1>
@@ -25,31 +31,172 @@
                     <h2>Aqui você encontra pratos que constituem minhas comidas preferidas</h2>
                 </div>
             </div>
+
             <div id="conteiner_boxes">
+
                 <div class="box">
-                    <div class="div_imagemPrato"><img src="assets/public/imgs/Receitas para fazer em uma panela só.jpg" alt=""></div>
-                    <div class="div_nomePrato"><h3> <a href="#camarao">Bobó de Camarão</a></h3></div>
+                    <div class="div_imagemPrato"><img src="assets/public/imgs/boboCamarao.jpg">
+                    </div>
+                    <div onclick="mostrarCamarao()" class="div_nomePrato">
+                        <h3> <a href="#secao_receitas">Bobó de Camarão</a></h3>
+                    </div>
                 </div>
+
                 <div class="box central">
-                    <div class="div_imagemPrato"><img src="assets/public/imgs/Molho de Maracujá para Salmão.jpg" alt=""></div>
-                    <div class="div_nomePrato"><h3><a href="#salmao">Salmão ao molho de maracujá</a></h3></div>
+                    <div class="div_imagemPrato"><img src="assets/public/imgs/SalmaoMaracuja.jpg"></div>
+                    <div onclick="mostrarSalmao()" class="div_nomePrato">
+                        <h3><a href="#secao_receitas">Salmão ao molho de maracujá</a></h3>
+                    </div>
                 </div>
+
                 <div class="box">
-                    <div class="div_imagemPrato direita"> <img src="assets/public/imgs/Bolinho de bacalhau da Vovó.jpg" alt=""></div>
-                    <div class="div_nomePrato"><h3><a href="#bacalhau">Bolinho de Bacalhau</a></h3></div>
+                    <div class="div_imagemPrato direita"> <img src="assets/public/imgs/Comidas.jpg"></div>
+                    <div onclick="mostrarCarangueijo()" class="div_nomePrato">
+                        <h3><a href="#secao_receitas">Caranguejada</a></h3>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="salmao" class="section_pratos ">
+
+
+    <section id="secao_receitas">
+
+        <div id="div_conteinerReceitas">
+            <div id="div_semReceita">
+                <h2>Selecione uma das receitas</h2>
+            </div>
+
+            <div id="div_receitaSalmao" style="display: none;" class="fundoReceita">
+
+                <div class="botao_rodar" onclick="rodarTexto()"> mudar </div>
+                <div id="div_ingredientesSalmao"> 
+                    <h2> Ingredintes </h2>
+                    <p>
+                        1 Kg em filé de salmão <br>
+                        Suco de 2 limões <br>
+                        2 maracujás grande <br>
+                        1 colher sobremesa de maisena <br>
+                        100g de manteiga com sal <br>
+                        sal a gosto <br>
+                        2 colheres sopa de açúcar
+                    </p>
+                </div>
+                <div id="div_preparoSalmao" style="display: none;">
+                        <div id="preparoPeixe">
+                        <h2> Modo de preparo </h2>
+                        <p>
+                            Em uma panela derreta a manteiga e acrescente o suco de limão, sal. <br>
+                            Coloque os filés de salmão em uma vasilha e despeje o marinado de manteiga sobre o peixe <br>
+                            deixe descansar por 1 hora. <br>
+                            Leve os filés em uma frigideira bem quente com a pele para baixo, deixe fritar bem até a pele ficar bem dourada <br>
+                            vire o filé para dourar do lado da carne
+                        </p>
+                    </div>
+                    <div id="preparoMolho">
+                        <h2> Molho de Maracujá </h2>
+                        <p>
+                            Coloque a polpa do maracujá no liquidificador e acrescente um copo de água, cuidado para não quebrar as sementes. <br>
+                            Coe o suco em uma peneira.<br>
+                            Acrescente o açúcar e a maisena, dissolva bem antes de levar ao fogo para não empelotar. <br>
+                            Leve ao fogo para engrossar. <br>
+                            Separe algumas sementes para enfeitar e deixe esfriar
+                        </p>
+                    </div>
+                </div>
+                
+
+            </div>
+
+            <div id="div_receitaCamarao" style="display: none;" class="fundoReceita">
+
+                <div id="div_ingredientesCamarao">
+                    <h2> Ingredintes </h2>
+                    <p>
+                        1 kg de camarão fresco <br>
+                        3 dentes de alho picados e amassados <br>
+                        suco de 1 limão <br>
+                        1 kg de mandioca (prefira as que já vem embaladas e descascadas, é mais prático) <br>
+                        3 cebolas (1 cortada em rodelas e 2 raladas) <br>
+                        1 folha de louro <br>
+                        6 colheres (sopa) de azeite de oliva <br>
+                        2 vidros de leite de coco <br>
+                        1 maço de cheiro-verde picado <br>
+                        2 latas de molho pronto de tomate <br>
+                        2 pimentões verdes bem picadinhos <br>
+                        2 colheres (sopa) de azeite de dendê <br>
+                        pimenta-do-reino e sal <br>
+                    </p>
+                </div>
+
+                <div id="div_preparoCamarao" style="display: none;">
+                    <h2> Modo de preparo </h2>
+                    <p>
+                        Lave os camarões e tempere com sal, alho, pimenta e limão, deixe marinar. <br>
+                        Pegue uma panela com água e cozinhe a mandioca em pedacinhos, com louro e a cebola em rodelas. <br>
+                        Ao amolecer, acrescente um vidro de leite de coco. <br>
+                        Deixe esfriar um pouco e bata no liquidificador. <br>
+                        Esquente o azeite de oliva, junte a cebola ralada e deixe dourar. <br>
+                        Acrescente os camarões e frite. <br>
+                        Adicione as 2 latas de molho de tomate, o cheiro-verde, o pimentão e deixe cozinhar por alguns
+                        minutos. <br>
+                        Junte na mesma panela, a mandioca batida no liquidificador, outro vidro de leite de coco e o azeite
+                        de dendê. <br>
+                        Deixe levantar fervura e está pronto. <br>
+                    </p>
+                </div>
+
+                <div class="botao_rodar" onclick="rodarTexto()"> mudar </div>
+
+            </div>
+
+            <div id="div_receitaCarangueijo" style="display: none;" class="fundoReceita">
+                <div class="botao_rodar" onclick="rodarTexto()"> mudar </div>
+                <div id="div_ingredientesCarangueijo"> 
+                    <h2> Ingredintes </h2>
+                    <p>
+                        1 kg de caranguejo <br>
+                        8 dentes de alho picado <br>
+                        2 unidades de cebola em rodelas <br>
+                        2 unidades de tomate em rodelas <br>
+                        1 unidade de pimentão verde em cubos <br>
+                        1/4 maço de salsinha picado <br>
+                        1/2 maço de alho-poró picado <br>
+                        1/2 xícara (chá) de coentro picado <br>
+                        1/4 xícara (chá) de azeite <br>
+                        1 colher (sopa) de extrato de tomates <br>
+                        1 colher (sopa) de molho de pimenta <br>
+                        1 lata de molho de tomate <br>
+                        1 lata de cerveja <br>
+                        Sal a gosto 
+                    </p>
+                </div>
+                <div id="div_preparoCarangueijo" style="display: none;"> 
+                    <div>
+                        <h2> Modo de preparo </h2>
+                        <p>
+                        1. Ferva os caranguejos até avermelharem, não cozinhe muito pois o cozimento final é com o molho. <br>
+                        2. Montagem para o cozimento final: coloque uma camada de caranguejo, uma de cebola, uma de pimentão, uma de tomate, salsinha, alho poró e coentro, intercalar as camadas até encher a panela, tape a panela e aguarde o molho.
+                        </p>
+                    </div>
+                    <div>
+                        <p>
+                            <h2> Molho </h2>
+                            1. refogue o alho, azeite, o molho de tomate, pimenta e 2 litros de água e sal a gosto, deixem ferver por 20 minutos. <br>
+                            2. Ponha na panela com os caranguejos no fogo e acrescente o molho ainda quente. <br>
+                            3. Coloque metade da cerveja e depois de 15 min o restante. <br>
+                            4. Deixe cozinhando em fogo brando por mais 40 minutos e vá experimentando o molho.
+                        </p>
+                </div>
+                </div>
+                
+
+            </div>
+
+        </div>
 
     </section>
-    <section id="camarao" class="section_pratos ">
 
-    </section>
-    <section id="bacalhau" class="section_pratos">
-
-    </section>
     <footer>
 
     </footer>

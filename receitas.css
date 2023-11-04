@@ -50,7 +50,7 @@ body{
     
         /* Fim Navbar */
 
-#secao_receita{
+#secao_pratos{
     background-color:#193E6A ;
     background-image: url(assets/public/imgs/fundo_selecaoReceitas.png);
     background-repeat: no-repeat;
@@ -152,24 +152,169 @@ body{
 
 
 /* Seção pratos */
-.section_pratos{
+
+#secao_receitas{
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#salmao{
-    background-color: burlywood;
+#div_conteinerReceitas{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#camarao{
-    background-color: brown;
+.fundoReceita{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
 }
 
-#bacalhau{
-    background-color: gold;
+#div_semReceita{
+    background-color:#193E6A ;
+    /* width: 100vw;
+    height: 30vh;
+    font-size: 40px;
+    color: #EDF6F9; */
+       
 }
 
+.botao_rodar{
+    align-self: center;
+    justify-self: center;
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    border: solid 3px #edf6f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #edf6f9;
+    font-size: 35px;
+    
+}
 
+.botao_rodar:hover{
+    background-color: black;
+}
+
+#secao_receitas h2{
+    font-size: 35px;
+    margin: 15px;
+}
+
+/* Salmao */
+
+#div_receitaSalmao{
+    background-color: #132846;
+    background-image: url(assets/public/imgs/imgFundoSalmao.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: right bottom;
+}
+
+#div_ingredientesSalmao{
+    width: 400px;
+    height: 450px;
+    margin: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #edf6f9;
+    font-size: 22px;
+}
+
+#div_preparoSalmao{
+    width: 500px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+    font-size: 22px;
+    color: #edf6f9;
+}
+
+/* Camarao */
+
+#div_receitaCamarao{
+    background-color: #92BCDB;
+    background-image: url(assets/public/imgs/imgFundoCamarao.png);
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    display: flex;
+    justify-content: left;
+    align-items: end;
+}
+
+#div_ingredientesCamarao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 650px;
+    height: 433px;
+    color: #EDF6F9;
+    font-size: 22px;
+    margin-left: 60px;
+
+}
+
+#div_preparoCamarao{
+    width: 650px;
+    height: 433px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #EDF6F9;
+    font-size: 22px;
+    margin-left: 60px;
+}
+
+/* Carangueijo */
+
+#div_receitaCarangueijo{
+    background-color: #183E97;
+    background-image: url(assets/public/imgs/imgFundoCarangueijo.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+#div_ingredientesCarangueijo{
+    width: 600px;
+    margin: 40px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #edf6f9;
+}
+
+#div_preparoCarangueijo{
+        width: 590px;
+        height: 450px;
+        margin: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+        color: #edf6f9;
+}
 
 
 footer{
