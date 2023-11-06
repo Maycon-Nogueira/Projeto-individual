@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devaneios</title>
+    <link rel="shortcut icon" href="assets/public/imgs/Logos/Logo_ondas-do-mar.png" type="image/x-icon">
     <link rel="stylesheet" href="cssReset.css">
     <link rel="stylesheet" href="receitas.css">
     <script src="devaneiosMaritimos.js"></script>
@@ -18,7 +19,7 @@
             <div class="area"> <a href="receitas.HTML"> Receitas </a></div>
             <div class="area"> <a href="jogo.HTML"> Jogo </a> </div>
             <div class="area central"> <a href="index.html"> Profundezas </a></div>
-            <div class="area"> <a href="historias.HTML"> Histórias </a></div>
+            <div class="area"> <a href="curiosidades.HTML"> Curiosidades </a></div>
             <div class="area "><a href="entrar.HTML"> Entrar </a></div>
         </header>
 
@@ -69,9 +70,16 @@
 
             <div id="div_receitaSalmao" style="display: none;" class="fundoReceita">
 
-                <div class="botao_rodar" onclick="rodarTexto()"> mudar </div>
+                <div class="botao_rodar" onclick="rodarTexto()">
+                <div class="forma_botao">
+                    <img class="setas" id="seta_esquerdaSalmao" src="assets/public/imgs/seta_esquerda.png" style="display: none;">
+                    <img class="setas" id="seta_direitaSalmao" src="assets/public/imgs/seta_direita.png">
+                </div>
+                <h5 id="id_botaoIngreSalmao" style="display: none;">Ingredientes</h5> 
+                <h5 id="id_botaoPrepSalmao">Preparo</h5>
+                </div>
                 <div id="div_ingredientesSalmao"> 
-                    <h2> Ingredintes </h2>
+                    <h2> Ingredientes </h2>
                     <p>
                         1 Kg em filé de salmão <br>
                         Suco de 2 limões <br>
@@ -146,12 +154,28 @@
                     </p>
                 </div>
 
-                <div class="botao_rodar" onclick="rodarTexto()"> mudar </div>
+               <div class="botao_rodar" onclick="rodarTexto()">
+                <div class="forma_botao">
+                    <img class="setas" id="seta_esquerdaCamarao" src="assets/public/imgs/seta_esquerda.png" style="display: none;">
+                    <img class="setas" id="seta_direitaCamarao" src="assets/public/imgs/seta_direita.png">
+                </div>
+                <h5 id="id_botaoIngreCamarao" style="display: none;">Ingredientes</h5> 
+                <h5 id="id_botaoPrepCamarao">Preparo</h5>
+                </div>
 
             </div>
 
             <div id="div_receitaCarangueijo" style="display: none;" class="fundoReceita">
-                <div class="botao_rodar" onclick="rodarTexto()"> mudar </div>
+
+                <div class="botao_rodar" onclick="rodarTexto()">
+                <div class="forma_botao">
+                    <img class="setas" id="seta_esquerdaCarangueijo" src="assets/public/imgs/seta_esquerda.png" style="display: none;">
+                    <img class="setas" id="seta_direitaCarangueijo" src="assets/public/imgs/seta_direita.png">
+                </div>
+                <h5 id="id_botaoIngreCarangueijo" style="display: none;">Ingredientes</h5> 
+                <h5 id="id_botaoPrepCarangueijo">Preparo</h5>
+                </div>
+
                 <div id="div_ingredientesCarangueijo"> 
                     <h2> Ingredintes </h2>
                     <p>

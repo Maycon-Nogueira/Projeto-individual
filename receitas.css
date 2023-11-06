@@ -1,4 +1,6 @@
 /* Ajustes gerais */
+
+
 html{
     scroll-behavior: smooth;
 }
@@ -19,6 +21,7 @@ body{
         width: 90vw;
         height: 13vh;
         display: flex;
+        justify-content: space-between;
     }
     
     .area{
@@ -143,6 +146,14 @@ body{
     
 }
 
+.div_nomePrato:hover{
+    
+    margin-left: -3px;
+    margin-top: -3px;
+    background-color: #fe4e02d1;
+    border: solid 4px #FE4E02;
+}
+
 /* imagens */
 .box img{ 
     width: 100%;
@@ -183,25 +194,47 @@ body{
     color: #EDF6F9; */
        
 }
-
+ 
+/* Botão  */
 .botao_rodar{
     align-self: center;
     justify-self: center;
-    border-radius: 100%;
-    width: 60px;
-    height: 60px;
-    border: solid 3px #edf6f9;
+    
+    width: 70px;
+    height: 70px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #edf6f9;
-    font-size: 35px;
-    
+    font-size: 15px;   
 }
 
-.botao_rodar:hover{
-    background-color: black;
+.forma_botao{
+    border: solid 3px #edf6f9;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.setas{
+    width: 55%;
+    height: auto;
+}
+
+.forma_botao:hover{
+    background-color: #FDAB00;
+    margin-left: -3px;
+    margin-top: -3px;
+}
+.botao_rodar:hover{
+    font-size: 18px;
+}
+
+/* Final do botão */
 
 #secao_receitas h2{
     font-size: 35px;

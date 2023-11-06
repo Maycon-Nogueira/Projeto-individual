@@ -1,0 +1,222 @@
+@font-face {
+    font-family: 'safira';
+    src: url(assets/public/Fonts/safira_march/Safira\ March.otf) format(opentype);
+}
+
+@keyframes animacao_cadastro{
+    from {
+        transform: translateX(-50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes animacao_entrar {
+    from {
+        transform: translateX(50px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow-x: hidden;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+header {
+    width: 90vw;
+    height: 13vh;
+    display: flex;
+    
+}
+
+.area {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.central {
+    width: 40%;
+
+}
+
+.area a {
+    text-decoration: none;
+    color: #EDF6F9;
+    font-size: 25px;
+}
+
+.central a {
+    font-size: 40px;
+
+}
+
+#navbar {
+    position: fixed;
+    display: flex;
+
+}
+
+/* Fim Navbar */
+
+/* Pagina inicial */
+#conteiner_principal {
+    background-color: aqua;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+}
+
+/* Seção entrar */
+img {
+    width: 683px;
+    height: auto;
+    
+}
+
+#div_esquerda {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#div_direita {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#div_login {
+    background-color: #EDF6F9;
+    width: 30%;
+    height: 55%;
+    position: absolute;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: animacao_entrar;
+    animation-duration: 2s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+}
+
+#div_cadastro {
+    background-color: #EDF6F9;
+    width: 35%;
+    height: 80%;
+    position: absolute;
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation-name: animacao_cadastro;
+    animation-duration: 2s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+}
+
+button{
+    margin-bottom: 80px;
+}
+
+.botao_cadastroLogin{
+    border: solid 1px #44AF69;
+    width: auto;
+    height: auto;
+    align-self: flex-start;
+    margin-left: 40px;
+}
+
+h1{
+    font-family: 'safira';
+    font-size: 25px;
+    opacity: 1;
+    color: #44AF69;
+    margin-bottom: 40px;
+}
+
+/* span{
+    color: ;
+} */
+input{
+    margin: 5px 0 12px 0;
+    border-radius: 4px;
+}
+
+
+/* fim seção entrar */
+
+footer {
+    background-color: #2d5fc3;
+    height: 6vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#div_carinho {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_redes {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.logos_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.img_icon {
+    width: 40%;
+    height: 40%;
+    margin: 0 ;
+    padding: 0;
+}
+
+
