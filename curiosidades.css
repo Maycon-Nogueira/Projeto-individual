@@ -50,34 +50,145 @@ body{
     
         /* Fim Navbar */
 
-        /* Pagina inicial */
+        /* Começo da seção curiosidades */
 #homepage{
-    background-image: url(https://s2.wklcdn.com/image_24/737955/18288363/11531546Master.jpg);
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+#pagina-curiosidades{
+    background-image: url(assets/public/imgs/img-curiosidades/img-teste.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 100vw;
-    height: 98vh;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
+}
+
+#conteiner{
+    width: 95vw;
+    height: 70vh;
 }
 
 #div_titulo{
     font-family: 'safira';
     width: 1000px;
-    height: 350px;
-    align-self: center;
+    height: auto;
     display: flex;
-    justify-content: space-between;
-    font-size: 70px;
+    font-size: 35px;
     color: #EDF6F9;
+    /* margin: 45px 0 0 50px; */
 }
 
 
-#div_subtitulo{
-    width: 700px;
-    height: 150px;
-    font-size: 20px;
-    display: flex;
-    align-items: flex-end;
+/* quadros */
 
+
+.quadros{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.box{
+    height: 90%;
+    width: 22%;
+    background-color: cadetblue;
+}
+
+.botao{
+    width: 2%;
+    height: 5%;
+    border: 2px solid #EDF6F9;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.botao img{
+    width: 75%;
+    height: 75%;
+}
+
+#vinteTres{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 70px;
+    border: solid 2px;
+    
+}
+
+#div_secreta{
+    width: 50vw;
+    height: 60vh;
+    background-color: #7700ff;
+    opacity: 0.8;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+}
+
+#fechar{
+    border: 2px solid #fff;
+}
+
+/* Fim seção curiosidades */
+
+footer {
+    background-color: #2d5fc3;
+    height: 6vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#div_carinho {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_redes {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.logos_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.img_icon {
+    width: 40%;
+    height: 40%;
+    margin: 0 ;
+    padding: 0;
 }
