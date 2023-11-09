@@ -4,6 +4,15 @@
     format(opentype);
 }
 
+@keyframes animacao_rodar {
+    from {
+        transform: translateX(100px);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
 body{
     margin: 0;
     padding: 0;
@@ -96,12 +105,63 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
+    animation-name: animacao_rodar;
+    animation-duration: 2s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
 }
 
 .box{
-    height: 90%;
+    height: 50%;
     width: 22%;
     background-color: cadetblue;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    transition: 0.7s;
+}
+
+.box:hover{
+    height: 97%;
+}
+
+.box img{
+    width: 70%;
+    height: auto;
+    top: 0px;
+    position: absolute;
+    transition: 0.7s;
+}
+.box:hover img{
+    top: -50px;
+    scale: 0.7s;
+    object-fit: cover;
+}
+
+.box p{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    padding: 0px 30px;
+    text-align: center;
+    height: 15%;
+    overflow: hidden;
+    transition: 0.7s;
+}
+
+.box:hover p{
+    top: 150px;
+    height: 90%;
+}
+
+.nomeAnimal_box{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px ;
+    color: #EDF6F9;
 }
 
 .botao{
