@@ -180,6 +180,7 @@ function rodarDir() {
             div_secreta.style.display = "none";
         }
     }
+    
 
 
 // Fim seção Curiosidades

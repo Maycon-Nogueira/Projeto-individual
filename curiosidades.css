@@ -5,10 +5,12 @@
 }
 
 @keyframes animacao_rodar {
-    from {
-        transform: translateX(100px);
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
     }
-    to {
+    100% {
+        opacity: 1;
         transform: translateX(0);
     }
 }
@@ -106,8 +108,10 @@ body{
     align-items: center;
     justify-content: space-evenly;
 
+    transition: transform 0.4s ease-in-out;
+
     animation-name: animacao_rodar;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-fill-mode: none;
     animation-iteration-count: 1;
 }
@@ -115,11 +119,12 @@ body{
 .box{
     height: 50%;
     width: 22%;
-    background-color: cadetblue;
+    background-color: rgba(66, 158, 160, 0.931);
     display: flex;
     justify-content: center;
     position: relative;
     transition: 0.7s;
+    padding: 0px;
 }
 
 .box:hover{
@@ -147,10 +152,12 @@ body{
     top: 200px;
     width: 100%;
     padding: 0px 30px;
+    margin: 0 15px;
     text-align: center;
     height: 15%;
     overflow: hidden;
     transition: 0.7s;
+    color: #EDF6F9;
 }
 
 .box:hover p{
@@ -161,7 +168,7 @@ body{
 .nomeAnimal_box{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 25px ;
-    color: #EDF6F9;
+    color: #011638;
 }
 
 .botao{
@@ -172,7 +179,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    /* transform: translateX(-50%); */
 }
+
+
 
 .botao img{
     width: 75%;
@@ -189,20 +200,25 @@ body{
 #div_secreta{
     width: 50vw;
     height: 60vh;
-    background-color: #7700ff;
-    opacity: 0.8;
+    background-color: #011638;
+    opacity: 1;
     position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: justify;
     padding: 20px;
-
+    color: #EDF6F9;
 }
 
 #fechar{
-    border: 2px solid #fff;
+    margin-top: 50px;
+    border: 2px solid #8E86C1;
+    padding: 6px;
 }
+
+
 
 /* Fim seção curiosidades */
 
