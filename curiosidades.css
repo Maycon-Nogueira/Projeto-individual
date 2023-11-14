@@ -84,7 +84,7 @@ body{
 
 #conteiner{
     width: 95vw;
-    height: 70vh;
+    height: 70vh; 
 }
 
 #div_titulo{
@@ -107,7 +107,6 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
     transition: transform 0.4s ease-in-out;
 
     animation-name: animacao_rodar;
