@@ -4,6 +4,33 @@
     format(opentype);
 }
 
+@keyframes equilizer {
+    0%{
+        height: 30px;
+    } 10%{
+        height: 50px;
+    } 20%{
+        height: 10px;
+    } 30%{
+        height: 75px;
+    } 40%{
+        height: 37px;
+    } 50%{
+        height: 97px;
+    } 60%{
+        height: 23px;
+    } 70%{
+        height: 61px;
+    } 80%{
+        height: 58px;
+    } 90%{
+        height: 70px;
+    } 100%{
+        height: 43px;
+    }
+}
+
+
 
 body{
     margin: 0;
@@ -89,7 +116,7 @@ body{
     
 }
 
-/* Display none - block */
+/* Display none -> block */
 
 #div_explicaJogo{
     border: groove 6px #2d5fc3;    background-color: rgba(66, 158, 160, 0.931);
@@ -118,6 +145,19 @@ body{
     display: flex;
 }
 
+/* ambas areas */
+
+.divisao{
+    width: 80%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #edf6f9;
+    margin: 7px;
+}
+
+/* area do Som */
 #div_caixaPergunta_som{
     width: 50%;
     height: auto;
@@ -126,25 +166,6 @@ body{
     justify-content: end;
     align-items: center;
     margin-bottom: 15px ;
-}
-
-#div_alternativas{
-    background-color: rgb(43, 107, 226);
-    width: 50%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.divisao{
-    width: 80%;
-    height: 20%;
-    background-color: azure;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .pergunta{
@@ -156,16 +177,165 @@ body{
 }
 
 .som{
+    background-color: #D7EBF1;
     border-radius: 100%;
     height: 50%;
     width: 40%;
+    display: flex;
+    flex-direction: column;
 }
 
 .botao_ouvir{
     height: 10%;
     width: 40%;
     border-radius: 30px;
+    background-color: #005C9F; 
+    font-size: 19px;
+
 }
+
+.botao_ouvir img{
+    height: 70%;
+    margin-right: 10px;
+}
+
+.btn_play{
+    border-left: 14px solid #edf6f9;
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid transparent;
+    cursor: pointer;
+}
+
+.btn_pause{
+    border-right: 5px solid #edf6f9;
+    border-left:5px solid #edf6f9 ;
+    height: 17px;
+    width: 6px;
+    cursor: pointer;
+    display: none;
+}
+
+/* .btn_play:hover{
+    background-color: rgba(112, 1, 1, 0.733);
+
+} */
+
+/* area Alternativas */
+
+#div_alternativas{
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: left;
+    color: #edf6f9;
+}
+
+#dificuldadePergunta{
+    width: 90px;
+    height: auto;
+    background-color: #edf6f9;
+    border-radius: 4px;
+    border: solid 1px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 184px;
+    bottom: 333px;
+    rotate: -25deg;
+    font-size: 16px;
+    color: #183E97;
+    font-weight: 900;
+}
+
+.caixaAlternativa{
+    background-color: #183E97;
+    width: 500px;
+    height: 60px;
+    display: flex ;
+    align-items: center;
+    border-radius: 50px;
+    
+    transition: filter (0.2s);
+}
+
+.caixaAlternativa:hover{
+    width: 520px;
+    height: 63px;
+    transition: 0.3s;
+    box-shadow: rgb(25, 42, 59) 0px 20px 30px -10px;
+    filter: brightness(0.92);
+}
+
+.div_numeroAlternativa{
+    background-color: #005C9F;
+    width: 75px;
+    height: 75px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
+
+
+
+/* VIDEO */
+#div_video{
+
+    background-color: #2d5fc3ec;
+    position: absolute;
+    align-self: center;
+    right: 6%;
+    bottom: 2%;
+    width: 85vw;
+    height: 70vh;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+ #div_video video{
+    width: 100%;
+    height: 100%;
+ }
+
+ #div_comentario{
+    width: 340px;
+    height: 300px;
+    color: #edf6f9;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.7;
+    margin: 22px;
+    font-size: 23px;
+
+ }
+
+ #div_video h1{
+    font-size: 48px;
+    border: 2px #edf6f94b solid;
+    border-radius: 5px;
+    margin-bottom: 20px;
+   padding: 10px;
+ }
+
+ #botao_fecharVideo{
+    font-size: 20px;
+    border: 2px #edf6f994 solid;
+    border-radius: 5px;
+    margin: 20px;
+    padding: 10px;
+     letter-spacing: 2px;
+     
+ }
+
 
 
 /* Fim sessão do jogo */
@@ -216,4 +386,54 @@ a {
     height: 40%;
     margin: 0 ;
     padding: 0;
+}
+
+/* Spectrums do audio */
+
+
+
+.audio-spectrum{
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    
+}
+
+.audio-spectrum .spectrum{
+    width: 9px;
+    height: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    background-color: black;
+
+    animation: infinite linear;
+    transition: 0.5s;
+}
+
+.audio-spectrum .spectrum:nth-child(1){
+    animation-duration: 4.4s ;
+}
+
+.audio-spectrum .spectrum:nth-child(2){
+    animation-duration: 3.7s ;
+}
+
+.audio-spectrum .spectrum:nth-child(3){
+    animation-duration: 3.6s ;
+}
+
+.audio-spectrum .spectrum:nth-child(4){
+    animation-duration: 4s ;
+}
+
+.audio-spectrum .spectrum:nth-child(5){
+    animation-duration: 3.3s ;
+}
+
+.audio-spectrum .spectrum:nth-child(6){
+    animation-duration: 3.1s ;
+}
+
+.audio-spectrum .spectrum:nth-child(7){
+    animation-duration: 3.7s ;
 }

@@ -114,6 +114,16 @@ var rotacao = 0;
 
 function rodarDir() {
 
+    var animacao_dir = document.querySelectorAll('.quadros');
+
+    for(
+        contador = 0;
+        contador<animacao_dir.length;
+        contador++
+    ){
+        animacao_dir[contador].style.animationName = 'animacao_rodar';
+    }
+
     if (rotacao == 0) {
         primeiro_quadro.style.display = "none";
         segundo_quadro.style.display = "flex";
@@ -146,6 +156,17 @@ function rodarDir() {
     }
 
     function rodarEsq(){
+        var animacao_esq = document.querySelectorAll('.quadros');
+
+        for(
+            contador = 0;
+            contador<animacao_esq.length;
+            contador++
+        ){
+            animacao_esq[contador].style.animationName = 'animacao_rodar_contrario';
+        }
+
+        
         if (rotacao == 5){
             sexto_quadro.style.display = "none";
             quinto_quadro.style.display = "flex";
@@ -171,6 +192,8 @@ function rodarDir() {
             sexto_quadro.style.display = "flex";
             rotacao = 5;
         }
+
+     
     }
 
     function secreta(){
@@ -183,4 +206,5 @@ function rodarDir() {
     
 
 
-// Fim seção Curiosidades
+// Fim Seção Curiosidades
+

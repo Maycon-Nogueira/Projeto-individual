@@ -14,6 +14,17 @@
         transform: translateX(0);
     }
 }
+    @keyframes animacao_rodar_contrario {
+        0%{
+            opacity: 0;
+            transform: translateX(-50%);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
 
 body{
     margin: 0;
@@ -109,10 +120,11 @@ body{
     justify-content: space-evenly;
     transition: transform 0.4s ease-in-out;
 
-    animation-name: animacao_rodar;
-    animation-duration: 1.5s;
+    animation-duration: 1.1s;
     animation-fill-mode: none;
     animation-iteration-count: 1;
+
+
 }
 
 .box{
@@ -179,7 +191,6 @@ body{
     justify-content: center;
     align-items: center;
 
-    /* transform: translateX(-50%); */
 }
 
 

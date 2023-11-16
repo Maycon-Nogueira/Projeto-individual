@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="cssReset.css">
     <link rel="stylesheet" href="jogo.css">
     <link rel="shortcut icon" href="assets/public/imgs/Logos/Logo_ondas-do-mar.png" type="image/x-icon">
-    <script src="devaneiosMaritimos.js"></script>
+    <script src="jogoMaritimo.js" async></script>
 </head>
 
 <body>
@@ -37,16 +37,75 @@
             <div id="div_conteinerInterativo">
                 <div id="div_caixaPergunta_som">
                     <div class="divisao pergunta">Qual animal emite este som?</div>
-                    <div class="divisao som"> 
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
 
-                            <video src="rabbit320.webm" controls>
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
 
-                              </video>
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
                     </div>
 
-                    <div class="divisao botao_ouvir">Ouvir</div>
+
                 </div>
                 <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Peixe-boi
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Baleias Jubartes
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                    </div>
+
+                </div>
+
+                <div id="div_video">
+
+                    <div id="div_comentario">
+                        <h1>Acertou</h1>
+                        
+                        Este é o "canto" das Baleias Jubartes, elas usam esta vocalização para se comunicar, se localizar e também atrair parceiros em períodos de
+                        acasalamento
+                        <div id="botao_fecharVideo" onclick="proximaPerg()">
+                            Próximo som
+                        </div>
+                    </div>
+                    <video src="assets/public/videos/Canto das Jubartes.mp4" autoplay loop plays-inline
+                        muted>
+
+
+
+                    </video>
+
 
                 </div>
             </div>
