@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devaneios</title>
+    <link rel="stylesheet" href="cssReset.css">
+    <link rel="stylesheet" href="jogo.css">
+    <link rel="shortcut icon" href="assets/public/imgs/Logos/Logo_ondas-do-mar.png" type="image/x-icon">
+    <script src="jogoMaritimo.js" async></script>
+</head>
+
+<body>
+    <section id="homepage">
+        <header id="navbar">
+            <div class="area"> <a href="receitas.HTML"> Receitas </a></div>
+            <div class="area"> <a href="jogo.HTML"> Jogo </a> </div>
+            <div class="area central"> <a href="index.html"> Profundezas </a></div>
+            <div class="area"> <a href="curiosidades.HTML"> Curiosidades </a></div>
+            <div class="area "><a href="entrar.HTML"> Entrar </a></div>
+        </header>
+        <div id="conteiner_jogo">
+            <div id="div_titulo">
+                <h1> Que som é esse? </h1>
+            </div>
+
+            <div id="div_explicaJogo">
+                <h3>Como Jogar:</h3>
+                <h5>Para jogar é necessário que você esteja logado! <br>
+                    já entrou na sua conta, okay! vamos lá</h5>
+                <p> O jogo na verdade é bem simples, ao clicar no botão "escutar" irá emitir um som relacionado a algum
+                    animal, sua missão é reconhecer ou adivinhar à quem o som pertence </p>
+                <div id="comecar"> Vamos lá </div>
+            </div>
+
+            <div id="div_conteinerInterativo">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/O Canto das Jubartes Brasileiras.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Peixe-boi
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Baleias Jubartes
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                    </div>
+
+                </div>
+
+                <div id="div_video">
+
+                    <div id="div_comentario">
+                        <h1>Acertou</h1>
+                        
+                        Este é o "canto" das Baleias Jubartes, elas usam esta vocalização para se comunicar, se localizar e também atrair parceiros em períodos de
+                        acasalamento
+                        <div id="botao_fecharVideo" onclick="proximaPerg()">
+                            Próximo som
+                        </div>
+                    </div>
+                    <video src="assets/public/videos/Canto das Jubartes.mp4" autoplay loop plays-inline
+                        muted>
+
+
+
+                    </video>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div id="div_carinho"><strong>Feito com dedicação por Maycon Nogueira</strong>
+        </div>
+        <div id="div_redes">
+            <div class="logos_footer"><a href=""><img class="img_icon" src="assets/public/imgs/Logos/instagram.png"
+                        alt="Logo do instagram"></a></div>
+            <div class="logos_footer"><a href="https://github.com/Maycon-Nogueira"><img class="img_icon"
+                        src="assets/public/imgs/Logos/logotipo-do-github.png" alt="Logo do github"></a></div>
+            <div class="logos_footer"><a
+                    href="https://www.linkedin.com/in/maycon-nogueira-92a2251a2/?originalSubdomain=br"><img
+                        class="img_icon" src="assets/public/imgs/Logos/logotipo-do-linkedin.png"
+                        alt="Logo linkeedin"></a></div>
+        </div>
+    </footer>
+</body>
+
+</html>
