@@ -1,61 +1,72 @@
 /* Ajustes gerais */
+@font-face {
+    font-family: 'safira';
+    src: url(assets/public/Fonts/safira_march/Safira\ March.otf) format(opentype);
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url(assets/public/Fonts/Poppins/Poppins-Regular.ttf) format(opentype);
+}
 
 
 
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
 
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: black;
     overflow-x: hidden;
+    font-family: 'poppins';
 }
 
 
 
-    /* Navbar */
-    header{
+/* Navbar */
+header {
 
-        width: 90vw;
-        height: 13vh;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .area{
-        width: 15%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
+    width: 90vw;
+    height: 13vh;
+    display: flex;
+    justify-content: space-between;
+}
 
-    .central{
-        width: 40%;
-        
-    }
+.area {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-    .area a{
-        text-decoration: none;
-        color: #EDF6F9;
-        font-size: 25px;
-    }
-    
-    .central a{
-        font-size: 40px;
-    }
+}
 
-    #navbar{
-        position: fixed;
-    }
-    
-        /* Fim Navbar */
+.central {
+    width: 40%;
 
-#secao_pratos{
-    background-color:#193E6A ;
+}
+
+.area a {
+    text-decoration: none;
+    color: #EDF6F9;
+    font-size: 23px;
+}
+
+.central a {
+    font-size: 35px;
+}
+
+#navbar {
+    position: fixed;
+}
+
+/* Fim Navbar */
+
+#secao_pratos {
+    background-color: #193E6A;
     background-image: url(assets/public/imgs/fundo_selecaoReceitas.png);
     background-repeat: no-repeat;
     background-size: 100% 99.8vh;
@@ -65,7 +76,7 @@ body{
     justify-content: center;
 }
 
-#div_conteudoPagina{
+#div_conteudoPagina {
     width: 75vw;
     height: 95vh;
     align-self: center;
@@ -73,29 +84,31 @@ body{
     flex-direction: column;
 }
 
-#div_titulo{
-      width: 800px;
-      height: 190px;
-      font-size: 120px;
-      color: #FE4E02;
-      display: flex;
-      justify-content: center;
-      margin: 72px 0 0 50px;
-  }
+#div_titulo {
+    width: 840px;
+    height: 190px;
+    font-family: 'safira';
+    font-size: 60px;
+    color: #FE4E02;
+    display: flex;
+    justify-content: center;
+    margin: 80px 0 0 50px;
+}
 
-#div_subtitulo{
-    width: 332px;
+#div_subtitulo {
+    width: 360px;
     height: 162px;
     display: flex;
     align-items: center;
-    font-size: 21px;
+    font-family: 'poppins';
+    font-size: 18px;
     color: #edf6f9;
     margin-left: 54px;
 
 
 }
 
-#conteiner_boxes{
+#conteiner_boxes {
     width: 100%;
     height: 400px;
     display: flex;
@@ -103,8 +116,8 @@ body{
     align-items: end;
 }
 
-.box{
-    background-color:rgba(215, 235, 241, 0.9);
+.box {
+    background-color: rgba(215, 235, 241, 0.9);
     width: 26%;
     height: 90%;
     border-top-left-radius: 80px;
@@ -114,28 +127,28 @@ body{
     align-items: center;
 }
 
-.box a{
+.box a {
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     color: #EDF6F9;
 }
 
-.central{
+.central {
     height: 100%;
     width: 32%;
 }
 
-.div_imagemPrato{
-    background-repeat:no-repeat ;
-    background-position: center ;
+.div_imagemPrato {
+    background-repeat: no-repeat;
+    background-position: center;
     width: 80%;
     height: 67%;
     border-radius: 100%;
     margin: 10px;
-    
+
 }
 
-.div_nomePrato{
+.div_nomePrato {
     background-color: #FE4E02;
     width: 80%;
     height: 15%;
@@ -144,11 +157,11 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
 }
 
-.div_nomePrato:hover{
-    
+.div_nomePrato:hover {
+
     margin-left: -3px;
     margin-top: -3px;
     background-color: #fe4e02d1;
@@ -156,7 +169,7 @@ body{
 }
 
 /* imagens */
-.box img{ 
+.box img {
     width: 100%;
     height: 100%;
     border-radius: 100%;
@@ -165,42 +178,52 @@ body{
 
 /* Seção pratos */
 
-#secao_receitas{
+#secao_receitas {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#div_conteinerReceitas{
+#div_conteinerReceitas {
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.fundoReceita{
+.fundoReceita {
     width: 100vw;
     height: 100vh;
     display: flex;
 }
 
-#div_semReceita{
-    background-color:#193E6A ;
-    /* width: 100vw;
-    height: 30vh;
+#div_semReceita {
+    background-image: url(assets/public/imgs/fundo_secaoSemReceitas.png);
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 46vh;
+    background-size: cover;
+    color: #EDF6F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_semReceita h4 {
+    font-family: 'safira';
     font-size: 40px;
-    color: #EDF6F9; */
-       
+   
 }
- 
+
+
 /* Botão  */
-.botao_rodar{
+.botao_rodar {
     align-self: center;
     justify-self: center;
-    
+
     width: 70px;
     height: 70px;
     display: flex;
@@ -208,10 +231,10 @@ body{
     align-items: center;
     justify-content: center;
     color: #edf6f9;
-    font-size: 15px;   
+    font-size: 15px;
 }
 
-.forma_botao{
+.forma_botao {
     border: solid 3px #edf6f9;
     border-radius: 100%;
     width: 40px;
@@ -221,30 +244,31 @@ body{
     justify-content: center;
 }
 
-.setas{
+.setas {
     width: 55%;
     height: auto;
 }
 
-.forma_botao:hover{
+.forma_botao:hover {
     background-color: #FDAB00;
     margin-left: -3px;
     margin-top: -3px;
 }
-.botao_rodar:hover{
+
+.botao_rodar:hover {
     font-size: 18px;
 }
 
 /* Final do botão */
 
-#secao_receitas h2{
+#secao_receitas h2 {
     font-size: 35px;
     margin: 15px;
 }
 
 /* Salmao */
 
-#div_receitaSalmao{
+#div_receitaSalmao {
     background-color: #132846;
     background-image: url(assets/public/imgs/imgFundoSalmao.png);
     background-repeat: no-repeat;
@@ -255,7 +279,7 @@ body{
     align-items: right bottom;
 }
 
-#div_ingredientesSalmao{
+#div_ingredientesSalmao {
     width: 400px;
     height: 450px;
     margin: 80px;
@@ -267,7 +291,7 @@ body{
     font-size: 22px;
 }
 
-#div_preparoSalmao{
+#div_preparoSalmao {
     width: 500px;
     height: 600px;
     display: flex;
@@ -281,7 +305,7 @@ body{
 
 /* Camarao */
 
-#div_receitaCamarao{
+#div_receitaCamarao {
     background-color: #92BCDB;
     background-image: url(assets/public/imgs/imgFundoCamarao.png);
     background-repeat: no-repeat;
@@ -291,7 +315,7 @@ body{
     align-items: end;
 }
 
-#div_ingredientesCamarao{
+#div_ingredientesCamarao {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -303,7 +327,7 @@ body{
 
 }
 
-#div_preparoCamarao{
+#div_preparoCamarao {
     width: 650px;
     height: 433px;
     display: flex;
@@ -316,7 +340,7 @@ body{
 
 /* Carangueijo */
 
-#div_receitaCarangueijo{
+#div_receitaCarangueijo {
     background-color: #183E97;
     background-image: url(assets/public/imgs/imgFundoCarangueijo.png);
     background-repeat: no-repeat;
@@ -326,7 +350,7 @@ body{
     align-items: end;
 }
 
-#div_ingredientesCarangueijo{
+#div_ingredientesCarangueijo {
     width: 600px;
     margin: 40px;
     height: 500px;
@@ -338,22 +362,64 @@ body{
     color: #edf6f9;
 }
 
-#div_preparoCarangueijo{
-        width: 590px;
-        height: 450px;
-        margin: 50px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 22px;
-        color: #edf6f9;
+#div_preparoCarangueijo {
+    width: 590px;
+    height: 450px;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #edf6f9;
+}
+
+/* Fim area de receitas */
+
+/* Footer */
+footer {
+    background-color: #2d5fc3;
+    height: 6vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#div_carinho {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#div_redes {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: right;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.logos_footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
-footer{
-    background-color: blueviolet;
-    width: 100vw;
-    height: 15vh;
-    
+
+.img_icon {
+    width: 40%;
+    height: 40%;
+    margin: 0;
+    padding: 0;
 }

@@ -69,32 +69,31 @@ function botao_cadastraUsuario() {
 
 }
 
-function botao_loginUsuario() {
-
-}
 
 // LOGIN
 
 function botao_loginUsuario() {
     // aguardar();
 
-    var email = input_cadastroEmailUsuario.value;
-    var senha = input_cadastroSenha.value;
+    var email = input_loginEmail.value;
+    var senha = input_loginSenha.value;
 
     if (email == "" || senha == "") {
-        cardErro.style.display = "block"
-        mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+        // cardErro.style.display = "block"
+        // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
         // finalizarAguardar();
+
+        alert(`inputs em branco`)
         return false;
     }
     else {
-        setInterval(sumirMensagem, 5000)
+        // setInterval(sumirMensagem, 5000)
     }
 
     console.log("FORM LOGIN: ", email);
     console.log("FORM SENHA: ", senha);
 
-    fetch("/usuarios/autenticar", {
+    fetch("usuarios/autenticar", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -103,29 +102,29 @@ function botao_loginUsuario() {
             emailServer: email,
             senhaServer: senha
         })
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO entrar()!")
+    }).then(function (resposta_login) {
+        console.log("ESTOU NO THEN DO login()!")
 
-        if (resposta.ok) {
-            console.log(resposta);
+        if (resposta_login.ok) {
+            console.log(resposta_login);
 
-            resposta.json().then(json => {
+            resposta_login.json().then(json => {
                 console.log(json);
                 console.log(JSON.stringify(json));
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
 
-                setTimeout(function () {
-                    window.location = "./dashboard/cards.html";
-                }, 1000); // apenas para exibir o loading
-
+                // setTimeout(function () {
+                    
+                // }, 1000); // apenas para exibir o loading
+                window.location = "http://localhost:3333/jogo.HTML";
             });
 
         } else {
 
             console.log("Houve um erro ao tentar realizar o login!");
 
-            resposta.text().then(texto => {
+            resposta_login.text().then(texto => {
                 console.error(texto);
                 // finalizarAguardar(texto);
             });
@@ -139,7 +138,7 @@ function botao_loginUsuario() {
 }
 
 function sumirMensagem() {
-    cardErro.style.display = "none"
+    // cardErro.style.display = "none"
 }
 
 

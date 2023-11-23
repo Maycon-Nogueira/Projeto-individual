@@ -25,21 +25,39 @@
                 <h1> Que som é esse? </h1>
             </div>
 
-            <div id="div_explicaJogo">
+            <div id="div_explicaJogo" class="aparecer">
                 <h3>Como Jogar:</h3>
                 <h5>Para jogar é necessário que você esteja logado! <br>
                     já entrou na sua conta, okay! vamos lá</h5>
                 <p> O jogo na verdade é bem simples, ao clicar no botão "escutar" irá emitir um som relacionado a algum
                     animal, sua missão é reconhecer ou adivinhar à quem o som pertence </p>
-                <div id="comecar"> Vamos lá </div>
+                <div  onclick="comecarJogo()" id="comecar"> Vamos lá </div>
             </div>
 
-            <div id="div_conteinerInterativo">
+             <div class="div_conteinerInterativo preJogo aparecer">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Dificuldade</div>
+
+    
+
+                </div>
+
+            </div> 
+
+            <div class="div_conteinerInterativo priPergunta esconder">
                 <div id="div_caixaPergunta_som">
                     <div class="divisao pergunta">Qual animal emite este som?</div>
                     <div class="divisao som">
                         <audio id="audio">
-                            <source src="assets/public/videos/O Canto das Jubartes Brasileiras.mp4" type="audio/mp4">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
                         </audio>
                         <div class="audio-spectrum">
                             <div class="spectrum"></div>
@@ -88,24 +106,511 @@
 
                 </div>
 
-                <div id="div_video">
+                <div id="div_video" class="esconder">
+                    <!-- <video src="" autoplay loop plays-inline> </video> -->
+                </div>
+            </div>
 
-                    <div id="div_comentario">
-                        <h1>Acertou</h1>
-                        
-                        Este é o "canto" das Baleias Jubartes, elas usam esta vocalização para se comunicar, se localizar e também atrair parceiros em períodos de
-                        acasalamento
-                        <div id="botao_fecharVideo" onclick="proximaPerg()">
-                            Próximo som
+             <div class="div_conteinerInterativo segPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/audios/SOM DO PINGUIM, SOM DOS ANIMAIS _ PENGUIN SOUND.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
                         </div>
                     </div>
-                    <video src="assets/public/videos/Canto das Jubartes.mp4" autoplay loop plays-inline
-                        muted>
 
 
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
 
-                    </video>
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
 
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        Linguado
+                    </div>
+
+                </div>
+            </div>
+
+             <div class="div_conteinerInterativo terPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Peixe-boi
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Baleias Jubartes
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="div_conteinerInterativo quaPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        linguado
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="div_conteinerInterativo quiPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        linguado
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="div_conteinerInterativo sexPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        linguado
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="div_conteinerInterativo setPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        linguado
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="div_conteinerInterativo oitPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        linguado
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="div_conteinerInterativo nonaPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        linguado
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="div_conteinerInterativo decPergunta esconder">
+                <div id="div_caixaPergunta_som">
+                    <div class="divisao pergunta">Qual animal emite este som?</div>
+                    <div class="divisao som">
+                        <audio id="audio">
+                            <source src="assets/public/videos/Canto das Jubartes.mp4" type="audio/mp4">
+                        </audio>
+                        <div class="audio-spectrum">
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                            <div class="spectrum"></div>
+                        </div>
+
+                        <div class="divisao botao_ouvir">
+                            <img src="assets/public/imgs/som_icone.png">
+
+                            <div class="botao" onclick="iniciar_parar()">
+                                <div class="btn btn_play"></div>
+                                <div class="btn btn_pause"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div id="div_alternativas">
+                    <div id="dificuldadePergunta">Fácil</div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_1" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 1 </div>
+                        Pinguim
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_2" class="caixaAlternativa">
+                        <div  class="div_numeroAlternativa"> 2 </div>
+                        Baiacu
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_3" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 3 </div>
+                        Peixe-serra
+                    </div>
+
+                    <div onclick="alternativa_escolhida()" id="alternativa_4" class="caixaAlternativa">
+                        <div class="div_numeroAlternativa"> 4 </div>
+                        linguado
+                    </div>
 
                 </div>
             </div>
