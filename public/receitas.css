@@ -1,3 +1,33 @@
+/* Animação de troca de texto */
+@keyframes troca_textoPreparo_esqDir {
+	0% {
+		opacity: 0;
+		transform: rotateY(100deg);
+		transform-origin: left;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateY(0);
+		transform-origin: left;
+	}
+}
+
+@keyframes troca_textoPreparo_dirEsq {
+	0% {
+		opacity: 0;
+		transform: rotateY(-100deg);
+		transform-origin: right;
+	}
+
+	100% {
+		opacity: 1;
+		transform: rotateY(0);
+		transform-origin: right;
+	}
+}
+
+
 /* Ajustes gerais */
 @font-face {
     font-family: 'safira';
@@ -157,15 +187,16 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
+    transition: all 0.3s;
+    cursor: pointer;
 }
 
 .div_nomePrato:hover {
 
-    margin-left: -3px;
-    margin-top: -3px;
+    transform: scale(1.05);
     background-color: #fe4e02d1;
     border: solid 4px #FE4E02;
+   
 }
 
 /* imagens */
@@ -192,6 +223,10 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    font-size: 16px;
+    line-height: 1.5;
+    color: #EDF6F9;
 }
 
 .fundoReceita {
@@ -206,7 +241,7 @@ header {
     width: 100vw;
     height: 46vh;
     background-size: cover;
-    color: #EDF6F9;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,15 +258,15 @@ header {
 .botao_rodar {
     align-self: center;
     justify-self: center;
-
     width: 70px;
     height: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #edf6f9;
-    font-size: 15px;
+    font-size: 13px;
+    transition: all .5s;
+    cursor: pointer;
 }
 
 .forma_botao {
@@ -242,6 +277,9 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 5px solid transparent;
+    transition: all 0.5s;
+    
 }
 
 .setas {
@@ -249,14 +287,12 @@ header {
     height: auto;
 }
 
-.forma_botao:hover {
-    background-color: #FDAB00;
-    margin-left: -3px;
-    margin-top: -3px;
-}
-
-.botao_rodar:hover {
-    font-size: 18px;
+.botao_rodar:hover .forma_botao{
+    scale: 1.1;
+    background-color: #fff5de26;
+    border: 5px solid #FE4E02;
+    border-radius: 50%;
+    
 }
 
 /* Final do botão */
@@ -264,6 +300,7 @@ header {
 #secao_receitas h2 {
     font-size: 35px;
     margin: 15px;
+    text-decoration: underline;
 }
 
 /* Salmao */
@@ -277,39 +314,42 @@ header {
     display: flex;
     justify-content: flex-end;
     align-items: right bottom;
+
+    
 }
 
 #div_ingredientesSalmao {
-    width: 400px;
-    height: 450px;
-    margin: 80px;
+    width: 500px;
+    height: 600px;
+    margin: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #edf6f9;
-    font-size: 22px;
+
+    animation: troca_textoPreparo_esqDir 0.4s ease 1 normal none;
 }
 
 #div_preparoSalmao {
     width: 500px;
     height: 600px;
+    margin: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 40px;
-    font-size: 22px;
-    color: #edf6f9;
+   
+    animation: troca_textoPreparo_esqDir 0.4s ease 1 normal none;
 }
 
 /* Camarao */
 
 #div_receitaCamarao {
-    background-color: #92BCDB;
+    background-color: #3066BE;
     background-image: url(assets/public/imgs/imgFundoCamarao.png);
     background-repeat: no-repeat;
     background-position: right bottom;
+    background-size: 1050px;
     display: flex;
     justify-content: left;
     align-items: end;
@@ -321,9 +361,9 @@ header {
     align-items: center;
     width: 650px;
     height: 433px;
-    color: #EDF6F9;
-    font-size: 22px;
     margin-left: 60px;
+
+    animation: troca_textoPreparo_dirEsq 0.4s ease 1 normal none;
 
 }
 
@@ -333,9 +373,9 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #EDF6F9;
-    font-size: 22px;
     margin-left: 60px;
+
+    animation: troca_textoPreparo_dirEsq 0.4s ease 1 normal none;
 }
 
 /* Carangueijo */
@@ -351,15 +391,15 @@ header {
 }
 
 #div_ingredientesCarangueijo {
-    width: 600px;
-    margin: 40px;
-    height: 500px;
+    width: 590px;
+    margin: 50px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    color: #edf6f9;
+
+    animation: troca_textoPreparo_esqDir 0.4s ease 1 normal none;
 }
 
 #div_preparoCarangueijo {
@@ -370,8 +410,8 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 22px;
-    color: #edf6f9;
+
+    animation: troca_textoPreparo_esqDir 0.4s ease 1 normal none;
 }
 
 /* Fim area de receitas */
