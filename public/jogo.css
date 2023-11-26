@@ -1,7 +1,11 @@
 @font-face {
     font-family: 'safira';
-    src: url(assets/public/Fonts/safira_march/Safira\ March.otf)
-    format(opentype);
+    src: url(assets/public/Fonts/safira_march/Safira\ March.otf) format(opentype);
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url(assets/public/Fonts/Poppins/Poppins-Regular.ttf) format(opentype);
 }
 
 @keyframes equilizer {
@@ -30,55 +34,67 @@
     }
 }
 
-
-
-body{
+body {
     margin: 0;
     padding: 0;
     background-color: black;
     overflow-x: hidden;
     line-height: 1.5;
+    font-family: 'poppins';
 }
 
-    /* Navbar */
-    header{
+body::-webkit-scrollbar {
+    width: 10px;               /* largura da scroll */
+}
 
-        width: 90vw;
-        height: 13vh;
-        display: flex;
-        justify-content: space-between;
+body::-webkit-scrollbar-track {
+    background: #6B4C93;        /* cor da área de trás da scroll */
+}
 
-    }
-    
-    .area{
-        width: 15%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        
-    }
+body::-webkit-scrollbar-thumb {
+    background-color: #6B4C93;    /* cor da barra móvel da scroll */
+    border-radius: 20px;       /* borda arredondada */
+    border: 3px solid rgba(66, 158, 160, 0.931);  /* padding */
+}
 
-    .central{
-        width: 40%;
-        
-    }
 
-    .area a{
-        text-decoration: none;
-        color: #2d5fc3;
-        font-size: 25px;
-    }
-    
-    .central a{
-        font-size: 40px;
+/* Navbar */
+header {
 
-    }
+    width: 90vw;
+    height: 13vh;
+    display: flex;
+}
 
-    #navbar{
-        position: fixed;
-    }
-    
-        /* Fim Navbar */
+.area {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.central {
+    width: 40%;
+
+}
+
+.area a {
+    text-decoration: none;
+    color: #2d5fc3;
+    font-size: 25px;
+}
+
+.central a {
+    font-size: 40px;
+
+}
+
+#navbar {
+    position: fixed;
+}
+
+/* Fim Navbar */
 
         /* Pagina inicial */
 #homepage{
@@ -195,7 +211,7 @@ body{
 }
 
 .pergunta{
-    width: 40%;
+    width: 45%;
     height: 18%;
     font-size: 20px;
     background-color: #005C9F;
@@ -259,7 +275,7 @@ body{
 }
 
 #dificuldadePergunta{
-    width: 90px;
+    width: 96px;
     height: auto;
     background-color: #edf6f9;
     border-radius: 4px;
@@ -268,9 +284,9 @@ body{
     align-items: center;
     justify-content: center;
     position: absolute;
-    left: 184px;
+    left: 165px;
     bottom: 333px;
-    rotate: -25deg;
+    rotate: -23deg;
     font-size: 16px;
     color: #183E97;
     font-weight: 900;
@@ -280,11 +296,12 @@ body{
     background-color: #183E97;
     width: 500px;
     height: 60px;
-    display: flex ;
+    display: flex;
     align-items: center;
     border-radius: 50px;
-    
-    transition: filter (0.2s);
+    transition: 0.6s;
+    justify-content: flex-start;
+    font-size: 30px;
 }
 
 .caixaAlternativa:hover{
@@ -304,35 +321,33 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 40px;
+    margin-right: 95px;
 }
-
-
-
-
 
 /* VIDEO */
 #div_video{
-
-    background-color: #2d5fc3ec;
+    background-image: url(assets/public/imgs/img_jogo/fundo_respostas.png);
     position: absolute;
     align-self: center;
-    right: 6%;
-    bottom: 2%;
-    width: 85vw;
-    height: 70vh;
+    right: 5%;
+    bottom: 3%;
+    width: 90vw;
+    height: 87vh;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
  #div_video video{
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    border: groove 6px #edf6f9;
+    height: auto;
+    cursor: none;
  }
 
  #div_comentario{
-    width: 340px;
-    height: 300px;
+    width: 400px;
+    height: 95%;
     color: #edf6f9;
     display: flex;
     flex-direction: column;
@@ -340,10 +355,10 @@ body{
     justify-content: center;
     text-align: justify;
     line-height: 1.2;
-    margin: 22px;
-    font-size: 19px;
-
- }
+    margin: 20px 16px;
+    font-size: 17px;
+    cursor: default;
+}
 
  #div_video h1{
     font-size: 48px;
@@ -359,8 +374,14 @@ body{
     border-radius: 5px;
     margin: 20px;
     padding: 10px;
-     letter-spacing: 2px;
-     
+    letter-spacing: 2px;
+    transition: 0.5s;
+    cursor: pointer; 
+ }
+
+ #botao_fecharVideo:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.6);
  }
 
 
