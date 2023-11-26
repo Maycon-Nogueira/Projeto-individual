@@ -182,11 +182,11 @@ function rodarDir() {
      
     }
 
-    function secreta(){
-        if (div_secreta.style.display == "none"){
-            div_secreta.style.display = "flex";
+    function curiosidade23(){
+        if (div_23.style.display == "none"){
+            div_23.style.display = "flex";
         } else {
-            div_secreta.style.display = "none";
+            div_23.style.display = "none";
         }
     }
     

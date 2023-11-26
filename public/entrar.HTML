@@ -22,32 +22,36 @@
             <div class="area "><a href="entrar.HTML"> Entrar </a></div>
         </header>
 
+        <!-- div Alerta de erro na validação -->
+        <div id="div_alerta"></div>
+
+        <!-- inicio divs cadastro e login -->
         <div id="div_esquerda" >
             <div id="div_cadastro" style="display: none;">
                 <h1> Criar conta </h1>
                 <span> Nome  de usuário </span>
  
-                <input id="input_cadastroNomeUsuario">
+                <input class="input" id="input_cadastroNomeUsuario">
 
                <span> Email </span>
 
-               <input id="input_cadastroEmailUsuario">
+               <input class="input" id="input_cadastroEmailUsuario">
 
                <span> Senha </span>
 
-               <input id="input_cadastroSenha" type="password">
+               <input class="input" id="input_cadastroSenha" type="password">
 
                <span> Confirmação de senha </span>
 
-               <input id="input_confirmaSenha" type="password">
+               <input class="input" id="input_confirmaSenha" type="password">
 
-               <button onclick="botao_cadastraUsuario()"> Cadastrar </button> 
+               <div class="botao_verificador"  onclick="botao_cadastraUsuario()"> Cadastrar </div> <!-- botao verificador de entrada e cadastro -->
 
                <div class="botao_cadastroLogin" > Já tem conta? <u onclick="abrirFecharLogin()"> Entrar </u> </div>
 
             </div>
             <div id="imagem_esquerda">
-                <img src="assets/public/imgs/imagens_entrar/pexels-pawel-kalisinski-1076758.jpg" alt=" imagem com uma agua viva">
+                <img src="assets/public/imgs/imagens_entrar/pexels-guillaume-meurice-1894350.jpg" alt=" imagem com uma agua viva">
             </div>
         </div>
 
@@ -63,7 +67,7 @@
 
                 <input type="password" id="input_loginSenha">
 
-                <button onclick="botao_loginUsuario()">Entrar</button>
+                <div class="botao_verificador" onclick="botao_loginUsuario()">Entrar</div>
 
                 <div class="botao_cadastroLogin" > Não tem conta? <u onclick="abrirFecharLogin()"> Cadastrar </u> </div>
             </div>

@@ -1,6 +1,12 @@
+/* Ajustes gerais */
 @font-face {
     font-family: 'safira';
     src: url(assets/public/Fonts/safira_march/Safira\ March.otf) format(opentype);
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url(assets/public/Fonts/Poppins/Poppins-Regular.ttf) format(opentype);
 }
 
 @keyframes animacao_cadastro{
@@ -21,6 +27,42 @@
     }
 }
 
+@keyframes animacao_alerta {
+    from {
+        transform: translateY(-70px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* @keyframes atencao {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-10px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(10px);
+	}
+
+	80% {
+		transform: translateX(8px);
+	}
+
+	90% {
+		transform: translateX(-8px);
+	}
+} */
 
 body {
     margin: 0;
@@ -30,6 +72,21 @@ body {
     line-height: 1.5;
     display: flex;
     flex-direction: column;
+    font-family: 'poppins';
+}
+
+body::-webkit-scrollbar {
+    width: 10px;               /* largura da scroll */
+}
+
+body::-webkit-scrollbar-track {
+    background: #193E6A;        /* cor da área de trás da scroll */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #193E6A;    /* cor da barra móvel da scroll */
+    border-radius: 20px;       /* borda arredondada */
+    border: 2px solid #0B6E4F;  /* padding */
 }
 
 /* Navbar */
@@ -37,7 +94,7 @@ header {
     width: 90vw;
     height: 13vh;
     display: flex;
-    
+
 }
 
 .area {
@@ -55,12 +112,13 @@ header {
 
 .area a {
     text-decoration: none;
-    color: #EDF6F9;
     font-size: 25px;
+    color:#EDF6F9;
+
 }
 
 .central a {
-    font-size: 40px;
+    font-size: 32px;
 
 }
 
@@ -74,11 +132,12 @@ header {
 
 /* Pagina inicial */
 #conteiner_principal {
-    background-color: aqua;
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
+    color: #0B6E4F;
+    font-size: larger;
 
 }
 
@@ -104,7 +163,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    
 }
 
 #div_login {
@@ -117,6 +176,7 @@ img {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 7px;
 
     animation-name: animacao_entrar;
     animation-duration: 2s;
@@ -127,13 +187,14 @@ img {
 #div_cadastro {
     background-color: #EDF6F9;
     width: 35%;
-    height: 80%;
+    height: 75%;
     position: absolute;
     opacity: 0.9;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-radius: 7px;
 
     animation-name: animacao_cadastro;
     animation-duration: 2s;
@@ -141,32 +202,80 @@ img {
     animation-iteration-count: 1;
 }
 
-button{
-    margin-bottom: 80px;
-}
+.botao_verificador{
+        width: 30%;
+        padding: 16px 0px;
+        margin: 15px 0 30px 0;
+        border-radius: 8px;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 3px;
+        background-color: #EDF6F9;
+        cursor: pointer;
+        transition: 0.5s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .botao_verificador:hover{
+        box-shadow: 0px 10px 40px -12px #E43F6F;
+    }
+    
+
 
 .botao_cadastroLogin{
-    border: solid 1px #44AF69;
+    border: solid 1px #E43F6F;
     width: auto;
     height: auto;
     align-self: flex-start;
     margin-left: 40px;
+    cursor: default;
 }
+
+.botao_cadastroLogin:hover u{
+    cursor: pointer;
+}
+
+
 
 h1{
     font-family: 'safira';
     font-size: 25px;
     opacity: 1;
-    color: #44AF69;
-    margin-bottom: 40px;
+    color: #E43F6F;
+    margin:25px 40px;
 }
 
 /* span{
     color: ;
 } */
 input{
+    height: 20px;
     margin: 5px 0 12px 0;
-    border-radius: 4px;
+    border-radius: 25px;
+    border: 1px solid #0B6E4F;
+}
+
+#div_alerta{
+    position: absolute;
+    width: 160px;
+    height: 70px;
+    top: 81px;
+    background-color: #EDF6F9;
+    opacity: 0.9;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+    animation-name: animacao_alerta;
+    animation-duration: 0.5s;
+    animation-fill-mode: none;
+    animation-iteration-count: 1;
+    padding: 7px;
+
+    font-size: 16px;
 }
 
 

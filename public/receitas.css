@@ -39,27 +39,32 @@
     src: url(assets/public/Fonts/Poppins/Poppins-Regular.ttf) format(opentype);
 }
 
-
-
-
-html {
-    scroll-behavior: smooth;
-}
-
-
 body {
     margin: 0;
     padding: 0;
     background-color: black;
     overflow-x: hidden;
+    line-height: 1.5;
     font-family: 'poppins';
 }
 
+body::-webkit-scrollbar {
+    width: 10px;               /* largura da scroll */
+}
+
+body::-webkit-scrollbar-track {
+    background: #193E6A;        /* cor da área de trás da scroll */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #193E6A;    /* cor da barra móvel da scroll */
+    border-radius: 20px;       /* borda arredondada */
+    border: 2px solid #FE4E02;  /* padding */
+}
 
 
 /* Navbar */
 header {
-
     width: 90vw;
     height: 13vh;
     display: flex;
@@ -82,11 +87,12 @@ header {
 .area a {
     text-decoration: none;
     color: #EDF6F9;
-    font-size: 23px;
+    font-size: 25px;
 }
 
 .central a {
-    font-size: 35px;
+    font-size: 40px;
+
 }
 
 #navbar {
@@ -123,6 +129,7 @@ header {
     display: flex;
     justify-content: center;
     margin: 80px 0 0 50px;
+    cursor: default;
 }
 
 #div_subtitulo {
