@@ -18,12 +18,11 @@ constraint fkJogadaUsuario
 		references usuario(idUsu)); 
         
 create table questoes(
-idQuestoes int primary key,
-acertosPorCem decimal(2,2),
-fkJogada int,
-constraint fkQuestoesJogada
-	foreign key questoes(fkJogada)
-		references jogada(idJogada));        
+acertoPorQuestao int);
+
+ -- constraint fkQuestoesJogada
+	-- foreign key questoes(fkJogada)
+		-- references jogada(idJogada));        
 
 -- insert into usuario (nomeUsu, emailUsu, senhaUsu) values 
 -- ('abc', 'maycon.og','1234');
@@ -31,8 +30,25 @@ constraint fkQuestoesJogada
 select * from usuario;
 select * from jogada;
 
-insert into questoes(idQuestoes) values 
-(1),(2),(3),(4),(5),
-	(6),(7),(8),(9),(10);
+insert into usuario(nomeUsu, emailUsu, senhaUsu, numSorte) values
+('Maycon', 'maycon.nogueira@sptech.school', 'admin', 23);
+
+insert into jogada(fkUsu, qtdAcertoJogada) values
+(1,20);
+
+insert into questoes(acertoPorQuestao) values 
+(1),
+(1),
+(1),
+(1),
+(1),	
+(1),
+(1),
+(1);
+
+insert into jogada(qtdAcertoJogada) values
+(2);
 
 select * from questoes;
+truncate table Questoes;
+ drop table questoes;

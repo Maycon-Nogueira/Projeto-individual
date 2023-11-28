@@ -385,8 +385,6 @@ function alternativa_escolhida() {
 
     var cliqueAlternativa = document.querySelector('.respostaSelecionada');
 
-
-
     document.querySelector(`.priPergunta #div_video`).classList.remove(`esconder`);
     document.querySelector(`.priPergunta #div_video`).classList.add(`aparecer`);
 
@@ -400,34 +398,94 @@ function alternativa_escolhida() {
 function verificarResposta() {
     var respostaClicada = event.target;
     var pontosUsuario = 0;
-    // var pontoPergunta
-
+    var pontoPriPerg = 0;
+    var pontoSegPerg = 0;
+    var pontoTerPerg = 0
+    var pontoQuaPerg = 0; 
+    var pontoQuiPerg = 0;
+    var pontoSexPerg = 0;
+    var pontoSetPerg = 0;
+    var pontoOitPerg= 0;
 
     if (respostaClicada.innerHTML == " Baleia Jubarte " && rotacao_geral == 1) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
+        pontoPriPerg = 1;
+
     } else if (respostaClicada.innerHTML == " Pinguim " && rotacao_geral == 2) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 4;
+        pontoSegPerg = 1;
+
     } else if (respostaClicada.innerHTML == " Dory " && rotacao_geral == 3) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
+        pontoTerPerg = 1;
+
     } else if (respostaClicada.innerHTML == " Morsa " && rotacao_geral == 4) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 2;
+        pontoQuaPerg = 1;
+
     } else if (respostaClicada.innerHTML == " Foca " && rotacao_geral == 5) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
+        pontoQuiPerg = 1;
+
     } else if (respostaClicada.innerHTML == " Golfinho " && rotacao_geral == 6) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
+        pontoSexPerg = 1;
+
     } else if (respostaClicada.innerHTML == " Orcas " && rotacao_geral == 7) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 2;
+        pontoSetPerg = 1;
+
     } else if (respostaClicada.innerHTML == " Peixe palhaço " && rotacao_geral == 8) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 8;
+        pontoOitPerg = 1;
     };
+
+    if (rotacao_geral == 8) {
+
+        fetch("/usuarios/inserirPontos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+            // emailServer: email,
+            // senhaServer: senha,
+            pontosUsuarioServer: pontosUsuario,
+            pontoPriPergServer: pontoPriPerg,
+            pontoSegPergServer: pontoSegPerg,
+            pontoTerPergServer: pontoTerPerg,
+            pontoQuaPergServer: pontoQuaPerg,
+            pontoQuiPergServer: pontoQuiPerg,
+            pontoSexPergServer: pontoSexPerg,
+            pontoSetPergServer: pontoSetPerg,
+            pontoOitPergServer: pontoOitPerg  
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    cardErro.style.display = "block";
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            });
+            return false;
+        }
+
 
 }
 
@@ -443,35 +501,96 @@ function proximaPerg() {
     }
 
     if (rotacao_geral == 8) {
-        // fetch("usuarios/pontuacao", {
+
+        window.location = "http://localhost:3333/entrar.HTML"
+        // fetch("/usuarios/inserirPontos", {
         //     method: "POST",
         //     headers: {
-        //         "Content-Type": "application/json"
+        //         "Content-Type": "application/json",
         //     },
         //     body: JSON.stringify({
         //         // crie um atributo que recebe o valor recuperado aqui
         //         // Agora vá para o arquivo routes/usuario.js
-        //         pontuacaoServer: totalPontosVar, 
-        //         idUsuarioServer: idVar
+        //     // emailServer: email,
+        //     // senhaServer: senha,
+        //     pontosUsuarioServer: pontosUsuario,
+        //     pontoPriPergServer: pontoPriPerg,
+        //     pontoSegPergServer: pontoSegPerg,
+        //     pontoTerPergServer: pontoTerPerg,
+        //     pontoQuaPergServer: pontoQuaPerg,
+        //     pontoQuiPergServer: pontoQuiPerg,
+        //     pontoSexPergServer: pontoSexPerg,
+        //     pontoSetPergServer: pontoSetPerg,
+        //     pontoOitPergServer: pontoOitPerg  
+        //     }),
+        // })
+        //     .then(function (resposta) {
+        //         console.log("resposta: ", resposta);
+
+        //         if (resposta.ok) {
+        //             cardErro.style.display = "block";
+        //         } else {
+        //             throw "Houve um erro ao tentar realizar o cadastro!";
+        //         }
         //     })
-        // }).then(function (resposta) {
-
-        //     console.log("resposta: ", resposta);
-
-        //     if (resposta.ok) {
-
-        //         console.log("dados cadastrados")
-
-        //     } else {
-        //         throw ("Houve um erro ao tentar realizar o cadastro!");
-        //     }
-        // }).catch(function (resposta) {
-        //     console.log(`#ERRO: ${resposta}`);
-        //     //finalizarAguardar();
-        // });
-        window.location = "http://localhost:3333/entrar.HTML"
-        return false;
+        //     .catch(function (resposta) {
+        //         console.log(`#ERRO: ${resposta}`);
+        //     });
+            
+            // return false;
+        }        
     }
 
-        
-    }
+    // fetch("usuarios/autenticar", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({
+    //         // emailServer: email,
+    //         // senhaServer: senha,
+    //         pontosUsuarioServer: pontosUsuario,
+    //         pontoPriPergServer: pontoPriPerg,
+    //         pontoSegPergServer: pontoSegPerg,
+    //         pontoTerPergServer: pontoTerPerg,
+    //         pontoQuaPergServer: pontoQuaPerg,
+    //         pontoQuiPergServer: pontoQuiPerg,
+    //         pontoSexPergServer: pontoSexPerg,
+    //         pontoSetPergServer: pontoSetPerg,
+    //         pontoOitPergServer: pontoOitPerg             
+    //     })
+    // }).then(function (resposta_login) {
+    //     console.log("ESTOU NO THEN DO login()!")
+
+    //     if (resposta_login.ok) {
+    //         console.log(resposta_login);
+
+    //         resposta_login.json().then(json => {
+    //             console.log(json);
+    //             console.log(JSON.stringify(json));
+    //             sessionStorage.EMAIL_USUARIO = json.email;
+    //             sessionStorage.NOME_USUARIO = json.nome;
+
+    //             div_alerta.style.display = 'flex';
+    //             div_alerta.innerHTML = 'Entrada efetuada';
+    //             setTimeout(
+    //                 window.location = "http://localhost:3333/jogo.HTML"
+    //                 , 3000); // apenas para exibir o loading
+
+    //         });
+
+    //     } else {
+
+    //         div_alerta.style.display = 'flex';
+    //         div_alerta.innerHTML = 'Email e/ou Senha incorretos';
+    //         console.log("Houve um erro ao tentar realizar o login!");
+
+    //         resposta_login.text().then(texto => {
+    //             console.error(texto);
+    //             // finalizarAguardar(texto);
+    //         });
+    //     }
+
+    // }).catch(function (erro) {
+    //     console.log(erro);
+    // })
