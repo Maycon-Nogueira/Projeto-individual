@@ -31,17 +31,22 @@ function inserirPontos(pontosUsuario, pontoPriPerg, pontoSegPerg, pontoTerPerg,
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-  
-    insert into questoes(acertoPorQuestao) values 
-    (${pontoPriPerg}),(${pontoSegPerg}),(${pontoTerPerg}),(${pontoQuaPerg}),(${pontoQuiPerg}),
-         (${pontoSexPerg}),(${pontoSetPerg}),(${pontoOitPerg});
+    insert into tentativa(fkUsu,fkQuestao, acerto, pontos) values
+        ( 1, 1, ${pontoPriPerg}, ${pontoPriPerg}),
+        ( 1, 2, ${pontoSegPerg}, ${pontoSegPerg * 4}),
+        ( 1, 3, ${pontoTerPerg}, ${pontoTerPerg}),
+        ( 1, 4, ${pontoQuaPerg}, ${pontoQuaPerg * 2}),
+        ( 1, 5, ${pontoQuiPerg}, ${pontoQuiPerg}),
+        ( 1, 6, ${pontoSexPerg}, ${pontoSexPerg}),
+        ( 1, 7, ${pontoSetPerg}, ${pontoSetPerg * 2}),
+        ( 1, 8, ${pontoOitPerg}, ${pontoOitPerg * 8});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
-}
+} // Mudar a fkUsu para o Id do usuario!!
 
 module.exports = {
     autenticar,
     cadastrar,
-    inserirPontos,
+    inserirPontos
 };

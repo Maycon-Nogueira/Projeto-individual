@@ -5,50 +5,49 @@ create table usuario(
 idUsu int primary key auto_increment,
 nomeUsu  varchar(45),
 emailUsu varchar(100),
-senhaUsu char(16),
-numSorte int);
+senhaUsu char(16));
 
-create table jogada(
-idJogada int auto_increment,
+create table numeroSorte(
+numSorte int ,
 fkUsu int,
-qtdAcertoJogada int,
-primary key (idJogada, fkUsu),
-constraint fkJogadaUsuario 
-	foreign key jogada(fkUsu) 
-		references usuario(idUsu)); 
-        
-create table questoes(
-acertoPorQuestao int);
+primary key(numSorte,fkUsu));
 
- -- constraint fkQuestoesJogada
-	-- foreign key questoes(fkJogada)
-		-- references jogada(idJogada));        
+create table questao(
+idQuestao int primary key);
 
--- insert into usuario (nomeUsu, emailUsu, senhaUsu) values 
--- ('abc', 'maycon.og','1234');
+create table tentativa(
+idTent int auto_increment,
+fkUsu int,
+fkQuestao int,
+acerto int,
+pontos int,
+primary key(idTent, fkUsu,fkQuestao),
+constraint tentativaUsuario
+	foreign key tentativa(fkUsu) 
+		references usuario(idUsu),
+constraint tentativaQuestao
+	foreign key tentativa(fkQuestao) 
+		references questao(idQuestao));
+
+describe usuario;
+describe numeroSorte;
+describe questao;
+describe tentativa;
 
 select * from usuario;
-select * from jogada;
 
-insert into usuario(nomeUsu, emailUsu, senhaUsu, numSorte) values
-('Maycon', 'maycon.nogueira@sptech.school', 'admin', 23);
+insert into questao values
+(1),(2),(3),(4),
+	(5),(6),(7),(8);
+    
+-- insert into tentativa(fkUsu,idTent,fkQuestao, acerto, pontos) values
+-- ( 1, 1, 1, 'sim', 1),
+-- ( 1, 1, 2, 'sim', 4),
+-- ( 1, 1, 3, 'sim', 1),
+-- ( 1, 1, 4, 'sim', 2),
+-- ( 1, 1, 5, 'sim', 1),
+-- ( 1, 1, 6, 'sim', 1),
+-- ( 1, 1, 7, 'sim', 2),
+-- ( 1, 1, 8, 'sim', 8);
 
-insert into jogada(fkUsu, qtdAcertoJogada) values
-(1,20);
-
-insert into questoes(acertoPorQuestao) values 
-(1),
-(1),
-(1),
-(1),
-(1),	
-(1),
-(1),
-(1);
-
-insert into jogada(qtdAcertoJogada) values
-(2);
-
-select * from questoes;
-truncate table Questoes;
- drop table questoes;
+select * from tentativa;
