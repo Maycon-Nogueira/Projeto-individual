@@ -31,10 +31,21 @@ body::-webkit-scrollbar-thumb {
     border: 3px solid rgba(66, 158, 160, 0.931);  /* padding */
 }
 
-/* ajustes iniciais */
+/* Começo  Pagina */
+#titulo_boasVindas{
+    font-family: 'safira';
+    color: #edf6f9;
+    position: absolute;
+    font-size: 22px;
+    top: 20px;
+    left: 300px;
+    
+}
+
 #section_principal{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     background-image: url(assets/public/imgs/sun-18.gif);
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,22 +53,31 @@ body::-webkit-scrollbar-thumb {
     height: 100vh;
 }
 
-
-
 #div_recebeRank{
     width: 55%;
     height: 80%;
     background-color: rgba(210, 105, 30, 0.458);
-    position: absolute;
-    left: 320px;
+}
+
+#div_informacoes{
+    width: 240px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: #edf6f9;
 }
 
 .div_recebeInfo{
-    width: 25%;
-    height: 10%;
+    width: 205px;
+    height: 15%;
     background-color: rgba(210, 105, 30, 0.458);
-    position: absolute;
-    left: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 } 
 
 #div_Perfil{

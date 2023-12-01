@@ -137,15 +137,22 @@ function inserirPontos(req, res) {
 
 function obterResultado(req, res) {
     console.log(`Estou no obter Resultado do controller`)
+    var idUsuario = req.body.idUsuario;
     var pontos = req.body.pontosServer;
     var acerto = req.body.acertoServer;
 
+    console.log('Pontos:', pontos);
+    console.log('Acerto:', acerto);
         usuarioModel.obterResultado(pontos, acerto)
             .then(
                 function (resultadoObterResultado) {
                     console.log(`\nResultados encontrados: ${resultadoObterResultado.length}`);
                     console.log(`Resultados: ${JSON.stringify(resultadoObterResultado)}`); // transforma JSON em String
-                    res.json(resultadoObterResultado)
+                    
+                    res.json({
+                        pontos: resultadoObterResultado[0].pontos,
+                        acerto: resultadoObterResultado[0].acerto                        
+                    });
                 }
             ).catch(
                 function (erro) {

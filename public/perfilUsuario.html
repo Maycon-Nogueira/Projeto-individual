@@ -30,13 +30,13 @@
 
         </div>
         <div id="div_recebeRank">
-
+            
         </div>
 
     <div id="div_informacoes">
-        <div class="div_recebeInfo"></div>
-        <div class="div_recebeInfo"></div>
-        <div class="div_recebeInfo"></div>
+        <div class="div_recebeInfo">Você acertou:<br> x/8 Sons</div>
+        <div class="div_recebeInfo">Você fez:<br> y/20 pontos</div>
+        <div class="div_recebeInfo">Você foi melhor que:<br> z% dos usuários!</div>
     </div>
 
     </section>
@@ -54,18 +54,19 @@
     function buscarDados() {
 
         var resultado = sessionStorage.ID_USUARIO;
-        
+        var pontos = 0;
+        var acerto = 0;
+
+        section_principal.innerHTML += ` <h1 id="titulo_boasVindas">Bem vindo à sua praia particular<span style="font-family: poppins;">,</span> ${sessionStorage.NOME_USUARIO}</h1> `;
 
         div_recebeRank.innerHTML += `
-                <div id="grafico${sessionStorage.ID_USUARIO}">
-                   
-                        <h1>Bem vindo à sua praia particular ${sessionStorage.NOME_USUARIO}</h1>                   
+                <div id="grafico${sessionStorage.ID_USUARIO}">                  
                     <div class="design_grafico">
                         <canvas id="myChartCanvas${sessionStorage.ID_USUARIO}"></canvas>
                     </div>
                 </div>
             `
-            obterResultado(sessionStorage.ID_USUARIO)
+            obterResultado(sessionStorage.ID_USUARIO, pontos, acerto);
         
 
         if (resultado.length > 0) {
@@ -107,17 +108,17 @@
     //     Para ajustar o "select", ajuste o comando sql em src/models
 idResultado = sessionStorage.ID_USUARIO;    
 
-    function obterResultado() {
+function obterResultado(idUsuario, pontos, acerto) {
         fetch("usuarios/obterResultado", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-              //  pontosServer: pontos,
-               // acertoServer: acerto
-            })
-        }).then(function (resultadoObterResultado) {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            pontosServer: pontos,
+            acertoServer: acerto
+        })
+    }).then(function (resultadoObterResultado) {
             console.log("ESTOU NO THEN DO obterResultado()!")
 
             if (resultadoObterResultado.ok) {

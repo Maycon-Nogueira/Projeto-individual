@@ -49,7 +49,7 @@ function obterResultado() {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
 
     var instrucao = `
-    select nomeUsu, sum(pontos), sum(acerto)  from tentativa
+    select nomeUsu, sum(pontos) as pontos, sum(acerto) as acerto  from tentativa
     join usuario
     on tentativa.fkUsu = usuario.idUsu
     group by nomeUsu;
