@@ -51,3 +51,10 @@ insert into questao values
 -- ( 1, 1, 8, 'sim', 8);
 
 select * from tentativa;
+select * from usuario;
+select * from questao;
+
+select nomeUsu, sum(pontos), sum(acerto)  from tentativa
+join usuario
+on tentativa.fkUsu = usuario.idUsu
+group by nomeUsu

@@ -16,4 +16,8 @@ router.post("/inserirPontos", function (req, res) {
     usuarioController.inserirPontos(req, res);
 });
 
+router.post("/obterResultado", function (req, res) {
+    usuarioController.obterResultado(req, res);
+});
+
 module.exports = router;

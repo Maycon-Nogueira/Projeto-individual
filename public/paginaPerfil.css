@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'safira';
+    src: url(assets/public/Fonts/safira_march/Safira\ March.otf) format(opentype);
+}
+
+@font-face {
+    font-family: 'poppins';
+    src: url(assets/public/Fonts/Poppins/Poppins-Regular.ttf) format(opentype);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    overflow-x: hidden;
+    line-height: 1.5;
+    font-family: 'poppins';
+}
+
+body::-webkit-scrollbar {
+    width: 10px;               /* largura da scroll */
+}
+
+body::-webkit-scrollbar-track {
+    background: #6B4C93;        /* cor da área de trás da scroll */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #6B4C93;    /* cor da barra móvel da scroll */
+    border-radius: 20px;       /* borda arredondada */
+    border: 3px solid rgba(66, 158, 160, 0.931);  /* padding */
+}
+
+/* ajustes iniciais */
+#section_principal{
+    display: flex;
+    align-items: center;
+    background-image: url(assets/public/imgs/sun-18.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+#div_recebeRank{
+    width: 55%;
+    height: 80%;
+    background-color: rgba(210, 105, 30, 0.458);
+    position: absolute;
+    left: 320px;
+}
+
+.div_recebeInfo{
+    width: 25%;
+    height: 10%;
+    background-color: rgba(210, 105, 30, 0.458);
+    position: absolute;
+    left: 320px;
+} 
+
+#div_Perfil{
+    width: 230px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #edf6f9;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: #edf6f9;
+}
+
+#foto_nome{
+    height: 34vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 18px 0 23px;
+}
+
+#foto{
+    width: 150px;
+    height: 150px;
+    border: solid 3px white;
+    border-radius: 100%;
+}
+
+#foto img{
+    width: 150px;
+    height: 150px;
+}
+
+#container_areasSite{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #b2230054;
+    height: 36vh;
+    align-self: flex-start;
+    width: 100%;
+    align-items: center;
+    border-radius: 40px;
+}

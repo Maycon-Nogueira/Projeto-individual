@@ -1,3 +1,5 @@
+recebe_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
 function abrirFecharLogin() {
     if (div_cadastro.style.display == "none") {
         div_cadastro.style.display = "flex";
@@ -92,8 +94,6 @@ function botao_loginUsuario() {
         return false;
     }
     else {
-
-
         console.log("FORM LOGIN: ", email);
         console.log("FORM SENHA: ", senha);
 
@@ -117,11 +117,12 @@ function botao_loginUsuario() {
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
 
                     div_alerta.style.display = 'flex';
                     div_alerta.innerHTML = 'Entrada efetuada';
                     setTimeout(
-                        window.location = "http://localhost:3333/jogo.HTML"
+                        window.location = "http://localhost:3333/perfilUsuario.HTML"
                         , 3000); // apenas para exibir o loading
 
                 });

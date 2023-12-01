@@ -1,5 +1,7 @@
 // Seção Jogos
 
+// recebe_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
 //  seção constantes para rodar as paginas
 
 const video = [
@@ -43,22 +45,22 @@ const alternativa = [
     // Primeiro som - Jubartes
     `<div id="dificuldadePergunta">Fácil</div> 
 
-       <div onclick="alternativa_escolhida()" class="caixaAlternativa">
+       <div class="caixaAlternativa">
            <div value="1" class="div_numeroAlternativa">1</div>
           <span class="respostaSelecionada"> Peixe-Boi </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" class="caixaAlternativa">
+       <div class="caixaAlternativa">
            <div  class="div_numeroAlternativa">2</div>
            <span class="respostaSelecionada"> Tubarão Baleia </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" class="caixaAlternativa">
+       <div class="caixaAlternativa">
            <div class="div_numeroAlternativa">3</div>
            <span class="respostaSelecionada"> Baleia Jubarte </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" class="caixaAlternativa">
+       <div class="caixaAlternativa">
            <div class="div_numeroAlternativa">4</div>
           <span class="respostaSelecionada"> Tartaruga Verde </span>
        </div>`,
@@ -66,22 +68,22 @@ const alternativa = [
     // Segundo som - Pinguim
     `<div id="dificuldadePergunta">Díficil</div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_5" class="caixaAlternativa">
+       <div id="alternativa_5" class="caixaAlternativa">
            <div  class="div_numeroAlternativa"> 1 </div>
            <span class="respostaSelecionada"> Pinguim </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_6" class="caixaAlternativa">
+       <div id="alternativa_6" class="caixaAlternativa">
            <div  class="div_numeroAlternativa"> 2 </div>
            <span class="respostaSelecionada"> Lula gigante </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_7" class="caixaAlternativa">
+       <div id="alternativa_7" class="caixaAlternativa">
            <div class="div_numeroAlternativa"> 3 </div>
            <span class="respostaSelecionada"> Peixe-serra </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_8" class="caixaAlternativa">
+       <div id="alternativa_8" class="caixaAlternativa">
            <div class="div_numeroAlternativa"> 4 </div>
            <span class="respostaSelecionada"> Linguado </span>
        </div>`,
@@ -89,22 +91,22 @@ const alternativa = [
     // Terceiro som - Dory
     `<div id="dificuldadePergunta">Fácil</div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_9" class="caixaAlternativa">
+       <div id="alternativa_9" class="caixaAlternativa">
            <div  class="div_numeroAlternativa"> 1 </div>
            <span class="respostaSelecionada"> Marlim </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_10" class="caixaAlternativa">
+       <div id="alternativa_10" class="caixaAlternativa">
            <div  class="div_numeroAlternativa"> 2 </div>
            <span class="respostaSelecionada"> Dory </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_11" class="caixaAlternativa">
+       <div id="alternativa_11" class="caixaAlternativa">
            <div class="div_numeroAlternativa"> 3 </div>
            <span class="respostaSelecionada"> Baleia azul </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_12" class="caixaAlternativa">
+       <div id="alternativa_12" class="caixaAlternativa">
            <div class="div_numeroAlternativa"> 4 </div>
            <span class="respostaSelecionada"> Barracuda </span>
        </div>`,
@@ -112,22 +114,22 @@ const alternativa = [
     // Quarto som - Morsa
     `<div id="dificuldadePergunta">Médio</div>
 
-        <div onclick="alternativa_escolhida()" id="alternativa_13" class="caixaAlternativa">
+        <div id="alternativa_13" class="caixaAlternativa">
             <div  class="div_numeroAlternativa"> 1 </div>
             <span class="respostaSelecionada"> Polvo </span>
         </div>
  
-        <div onclick="alternativa_escolhida()" id="alternativa_14" class="caixaAlternativa">
+        <div id="alternativa_14" class="caixaAlternativa">
             <div  class="div_numeroAlternativa"> 2 </div>
             <span class="respostaSelecionada"> Peixe-boi </span>
         </div>
  
-        <div onclick="alternativa_escolhida()" id="alternativa_15" class="caixaAlternativa">
+        <div id="alternativa_15" class="caixaAlternativa">
             <div class="div_numeroAlternativa"> 3 </div>
             <span class="respostaSelecionada"> Tubarão Martelo </span>
         </div>
  
-        <div onclick="alternativa_escolhida()" id="alternativa_16" class="caixaAlternativa">
+        <div id="alternativa_16" class="caixaAlternativa">
             <div class="div_numeroAlternativa"> 4 </div>
             <span class="respostaSelecionada"> Morsa </span>
         </div>`,
@@ -135,22 +137,22 @@ const alternativa = [
     // quinto som - Foca
     `<div id="dificuldadePergunta">Fácil</div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_17" class="caixaAlternativa">
+       <div id="alternativa_17" class="caixaAlternativa">
            <div  class="div_numeroAlternativa"> 1 </div>
            <span class="respostaSelecionada"> Salmão </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_18" class="caixaAlternativa">
+       <div id="alternativa_18" class="caixaAlternativa">
            <div  class="div_numeroAlternativa"> 2 </div>
            <span class="respostaSelecionada"> Baiacu </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_19" class="caixaAlternativa">
+       <div id="alternativa_19" class="caixaAlternativa">
            <div class="div_numeroAlternativa"> 3 </div>
            <span class="respostaSelecionada"> Foca </span>
        </div>
 
-       <div onclick="alternativa_escolhida()" id="alternativa_20" class="caixaAlternativa">
+       <div id="alternativa_20" class="caixaAlternativa">
            <div class="div_numeroAlternativa"> 4 </div>
            <span class="respostaSelecionada"> Peixe leão </span>
        </div>`,
@@ -158,22 +160,22 @@ const alternativa = [
     // sexto som - Golfinho
     `<div id="dificuldadePergunta">Fácil</div>
 
-        <div onclick="alternativa_escolhida()" id="alternativa_21" class="caixaAlternativa">
+        <div id="alternativa_21" class="caixaAlternativa">
             <div  class="div_numeroAlternativa"> 1 </div>
             <span class="respostaSelecionada"> Golfinho </span>
         </div>
  
-        <div onclick="alternativa_escolhida()" id="alternativa_22" class="caixaAlternativa">
+        <div id="alternativa_22" class="caixaAlternativa">
             <div  class="div_numeroAlternativa"> 2 </div>
             <span class="respostaSelecionada"> Orcas </span>
         </div>
  
-        <div onclick="alternativa_escolhida()" id="alternativa_23" class="caixaAlternativa">
+        <div id="alternativa_23" class="caixaAlternativa">
             <div class="div_numeroAlternativa"> 3 </div>
             <span class="respostaSelecionada"> Botos </span>
         </div>
  
-        <div onclick="alternativa_escolhida()" id="alternativa_24" class="caixaAlternativa">
+        <div id="alternativa_24" class="caixaAlternativa">
             <div class="div_numeroAlternativa"> 4 </div>
             <span class="respostaSelecionada"> Beluga </span>
         </div>`,
@@ -181,22 +183,22 @@ const alternativa = [
     // Sétimo som - Orca
     `<div id="dificuldadePergunta">Médio</div>
 
-     <div onclick="alternativa_escolhida()" id="alternativa_25" class="caixaAlternativa">
+     <div id="alternativa_25" class="caixaAlternativa">
          <div  class="div_numeroAlternativa"> 1 </div>
          <span class="respostaSelecionada"> Golfinho </span>
      </div>
 
-     <div onclick="alternativa_escolhida()" id="alternativa_26" class="caixaAlternativa">
+     <div id="alternativa_26" class="caixaAlternativa">
          <div  class="div_numeroAlternativa"> 2 </div>
          <span class="respostaSelecionada"> Orcas </span>
      </div>
 
-     <div onclick="alternativa_escolhida()" id="alternativa_27" class="caixaAlternativa">
+     <div id="alternativa_27" class="caixaAlternativa">
          <div class="div_numeroAlternativa"> 3 </div>
          <span class="respostaSelecionada"> Botos </span>
      </div>
 
-     <div onclick="alternativa_escolhida()" id="alternativa_28" class="caixaAlternativa">
+     <div id="alternativa_28" class="caixaAlternativa">
          <div class="div_numeroAlternativa"> 4 </div>
          <span class="respostaSelecionada"> Beluga </span>
      </div>`,
@@ -204,22 +206,22 @@ const alternativa = [
     // Oitavo som - Palhaço
     `<div id="dificuldadePergunta">Extrema</div>
 
-      <div onclick="alternativa_escolhida()" id="alternativa_29" class="caixaAlternativa">
+      <div id="alternativa_29" class="caixaAlternativa">
           <div  class="div_numeroAlternativa"> 1 </div>
           <span class="respostaSelecionada"> Peixe bolha </span>
       </div>
 
-      <div onclick="alternativa_escolhida()" id="alternativa_30" class="caixaAlternativa">
+      <div id="alternativa_30" class="caixaAlternativa">
           <div  class="div_numeroAlternativa"> 2 </div>
           <span class="respostaSelecionada"> Baiacu </span>
       </div>
 
-      <div onclick="alternativa_escolhida()" id="alternativa_31" class="caixaAlternativa">
+      <div id="alternativa_31" class="caixaAlternativa">
           <div class="div_numeroAlternativa"> 3 </div>
           <span class="respostaSelecionada"> Peixe palhaço </span>
       </div>
 
-      <div onclick="alternativa_escolhida()" id="alternativa_32" class="caixaAlternativa">
+      <div id="alternativa_32" class="caixaAlternativa">
           <div class="div_numeroAlternativa"> 4 </div>
           <span class="respostaSelecionada"> Tartaruga de couro </span>
       </div>`
@@ -317,8 +319,6 @@ const texto_explicativo = [
     </div>`
 ]
 
-
-
 // reprodutor e iniciar/parar espectro
 
 function iniciar_parar() {
@@ -362,8 +362,6 @@ function iniciar_parar() {
 
 rotacao_geral = 0;
 
-
-
 function comecarJogo() {
 
     document.querySelector('#div_explicaJogo').classList.remove(`aparecer`);
@@ -378,12 +376,28 @@ function comecarJogo() {
 
     document.querySelector('.priPergunta').classList.remove(`esconder`);
     document.querySelector(`.priPergunta`).classList.add(`aparecer`);
+
+    configurarListeners()
+
 }
 
-function alternativa_escolhida() {
-    rotacao_geral += 1
+function configurarListeners() {
+    document.querySelectorAll(".caixaAlternativa").forEach(function(div) {
+        div.addEventListener("click", function (elementoQueFoiClicado) {
+            var conteudo = elementoQueFoiClicado.target.innerHTML;
+            if(conteudo.indexOf("</div>") > -1){
+                conteudo = elementoQueFoiClicado.target.querySelector(".respostaSelecionada").innerHTML;
+            } else if (!isNaN(Number(conteudo))) {
+                conteudo = elementoQueFoiClicado.target.nextElementSibling.innerHTML;
+            }
+            alternativa_escolhida(conteudo)
+        })
+    });
+}
 
-    var cliqueAlternativa = document.querySelector('.respostaSelecionada');
+function alternativa_escolhida(alternativaEscolhida) {
+    console.log("alternativaEscolhida ",alternativaEscolhida)
+    rotacao_geral += 1
 
     document.querySelector(`.priPergunta #div_video`).classList.remove(`esconder`);
     document.querySelector(`.priPergunta #div_video`).classList.add(`aparecer`);
@@ -392,57 +406,59 @@ function alternativa_escolhida() {
     div_inserirAudio.innerHTML = audio[rotacao_geral];
     div_alternativas.innerHTML = alternativa[rotacao_geral];
 
-    cliqueAlternativa.addEventListener("click", verificarResposta());
+    verificarResposta(alternativaEscolhida, rotacao_geral)
+    
+    configurarListeners();
 }
 
-function verificarResposta() {
-    var respostaClicada = event.target;
-    var pontosUsuario = 0;
-    var pontoPriPerg = 0;
-    var pontoSegPerg = 0;
-    var pontoTerPerg = 0
-    var pontoQuaPerg = 0; 
-    var pontoQuiPerg = 0;
-    var pontoSexPerg = 0;
-    var pontoSetPerg = 0;
-    var pontoOitPerg= 0;
+var pontosUsuario = 0;
+var pontoPriPerg = 0;
+var pontoSegPerg = 0;
+var pontoTerPerg = 0
+var pontoQuaPerg = 0; 
+var pontoQuiPerg = 0;
+var pontoSexPerg = 0;
+var pontoSetPerg = 0;
+var pontoOitPerg= 0;
 
-    if (respostaClicada.innerHTML == " Baleia Jubarte " && rotacao_geral == 1) {
+function verificarResposta(resposta, rotacao_geral) {
+
+    if (resposta == " Baleia Jubarte " && rotacao_geral == 1) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
         pontoPriPerg = 1;
 
-    } else if (respostaClicada.innerHTML == " Pinguim " && rotacao_geral == 2) {
+    } else if (resposta == " Pinguim " && rotacao_geral == 2) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 4;
         pontoSegPerg = 1;
 
-    } else if (respostaClicada.innerHTML == " Dory " && rotacao_geral == 3) {
+    } else if (resposta == " Dory " && rotacao_geral == 3) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
         pontoTerPerg = 1;
 
-    } else if (respostaClicada.innerHTML == " Morsa " && rotacao_geral == 4) {
+    } else if (resposta == " Morsa " && rotacao_geral == 4) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 2;
         pontoQuaPerg = 1;
 
-    } else if (respostaClicada.innerHTML == " Foca " && rotacao_geral == 5) {
+    } else if (resposta == " Foca " && rotacao_geral == 5) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
         pontoQuiPerg = 1;
 
-    } else if (respostaClicada.innerHTML == " Golfinho " && rotacao_geral == 6) {
+    } else if (resposta == " Golfinho " && rotacao_geral == 6) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 1;
         pontoSexPerg = 1;
 
-    } else if (respostaClicada.innerHTML == " Orcas " && rotacao_geral == 7) {
+    } else if (resposta == " Orcas " && rotacao_geral == 7) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 2;
         pontoSetPerg = 1;
 
-    } else if (respostaClicada.innerHTML == " Peixe palhaço " && rotacao_geral == 8) {
+    } else if (resposta == " Peixe palhaço " && rotacao_geral == 8) {
         acerto_erro.innerHTML = `Certo`
         pontosUsuario += 8;
         pontoOitPerg = 1;
@@ -475,7 +491,7 @@ function verificarResposta() {
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    cardErro.style.display = "block";
+                    console.log(`Inserir pontos iniciado`)
                 } else {
                     throw "Houve um erro ao tentar realizar o cadastro!";
                 }
@@ -485,8 +501,6 @@ function verificarResposta() {
             });
             return false;
         }
-
-
 }
 
 function proximaPerg() {
@@ -501,96 +515,6 @@ function proximaPerg() {
     }
 
     if (rotacao_geral == 8) {
-
-        window.location = "http://localhost:3333/entrar.HTML"
-        // fetch("/usuarios/inserirPontos", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         // crie um atributo que recebe o valor recuperado aqui
-        //         // Agora vá para o arquivo routes/usuario.js
-        //     // emailServer: email,
-        //     // senhaServer: senha,
-        //     pontosUsuarioServer: pontosUsuario,
-        //     pontoPriPergServer: pontoPriPerg,
-        //     pontoSegPergServer: pontoSegPerg,
-        //     pontoTerPergServer: pontoTerPerg,
-        //     pontoQuaPergServer: pontoQuaPerg,
-        //     pontoQuiPergServer: pontoQuiPerg,
-        //     pontoSexPergServer: pontoSexPerg,
-        //     pontoSetPergServer: pontoSetPerg,
-        //     pontoOitPergServer: pontoOitPerg  
-        //     }),
-        // })
-        //     .then(function (resposta) {
-        //         console.log("resposta: ", resposta);
-
-        //         if (resposta.ok) {
-        //             cardErro.style.display = "block";
-        //         } else {
-        //             throw "Houve um erro ao tentar realizar o cadastro!";
-        //         }
-        //     })
-        //     .catch(function (resposta) {
-        //         console.log(`#ERRO: ${resposta}`);
-        //     });
-            
-            // return false;
+        setInterval(window.location = "/perfilUsuario.HTML", 4000)
         }        
     }
-
-    // fetch("usuarios/autenticar", {
-    //     method: "POST",
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify({
-    //         // emailServer: email,
-    //         // senhaServer: senha,
-    //         pontosUsuarioServer: pontosUsuario,
-    //         pontoPriPergServer: pontoPriPerg,
-    //         pontoSegPergServer: pontoSegPerg,
-    //         pontoTerPergServer: pontoTerPerg,
-    //         pontoQuaPergServer: pontoQuaPerg,
-    //         pontoQuiPergServer: pontoQuiPerg,
-    //         pontoSexPergServer: pontoSexPerg,
-    //         pontoSetPergServer: pontoSetPerg,
-    //         pontoOitPergServer: pontoOitPerg             
-    //     })
-    // }).then(function (resposta_login) {
-    //     console.log("ESTOU NO THEN DO login()!")
-
-    //     if (resposta_login.ok) {
-    //         console.log(resposta_login);
-
-    //         resposta_login.json().then(json => {
-    //             console.log(json);
-    //             console.log(JSON.stringify(json));
-    //             sessionStorage.EMAIL_USUARIO = json.email;
-    //             sessionStorage.NOME_USUARIO = json.nome;
-
-    //             div_alerta.style.display = 'flex';
-    //             div_alerta.innerHTML = 'Entrada efetuada';
-    //             setTimeout(
-    //                 window.location = "http://localhost:3333/jogo.HTML"
-    //                 , 3000); // apenas para exibir o loading
-
-    //         });
-
-    //     } else {
-
-    //         div_alerta.style.display = 'flex';
-    //         div_alerta.innerHTML = 'Email e/ou Senha incorretos';
-    //         console.log("Houve um erro ao tentar realizar o login!");
-
-    //         resposta_login.text().then(texto => {
-    //             console.error(texto);
-    //             // finalizarAguardar(texto);
-    //         });
-    //     }
-
-    // }).catch(function (erro) {
-    //     console.log(erro);
-    // })

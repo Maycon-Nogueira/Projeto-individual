@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devaneios</title>
+    <link rel="stylesheet" href="cssReset.css">
+    <link rel="stylesheet" href="paginaPerfil.css">
+    <link rel="shortcut icon" href="assets/public/imgs/Logos/Logo_ondas-do-mar.png" type="image/x-icon">
+    <script src="devaneiosMaritimos.js"></script>
+</head>
+
+<body>
+    <section id="section_principal">
+
+        <div id="div_Perfil">
+            <div id="foto_nome">
+                <div id="foto">
+                    <img src="assets/public/imgs/Logos/Foto_perfil.png">
+                </div>
+                <div id="recebe_usuario" class="area "><a href="entrar.HTML"> Entrar </a></div>
+            </div>
+            <div id="container_areasSite">
+                <div class="area"> <a href="receitas.HTML"> Receitas </a></div>
+                <div class="area"> <a href="jogo.HTML"> Jogo </a> </div>
+                <div class="area"> <a href="index.html"> Profundezas </a></div>
+                <div class="area"> <a href="curiosidades.HTML"> Curiosidades </a></div>
+            </div>
+
+        </div>
+        <div id="div_recebeRank">
+
+        </div>
+
+    <div id="div_informacoes">
+        <div class="div_recebeInfo"></div>
+        <div class="div_recebeInfo"></div>
+        <div class="div_recebeInfo"></div>
+    </div>
+
+    </section>
+</body>
+
+</html>
+
+<script>
+    recebe_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    // let proximaAtualizacao;
+
+    window.onload = buscarDados;
+
+    function buscarDados() {
+
+        var resultado = sessionStorage.ID_USUARIO;
+        
+
+        div_recebeRank.innerHTML += `
+                <div id="grafico${sessionStorage.ID_USUARIO}">
+                   
+                        <h1>Bem vindo à sua praia particular ${sessionStorage.NOME_USUARIO}</h1>                   
+                    <div class="design_grafico">
+                        <canvas id="myChartCanvas${sessionStorage.ID_USUARIO}"></canvas>
+                    </div>
+                </div>
+            `
+            obterResultado(sessionStorage.ID_USUARIO)
+        
+
+        if (resultado.length > 0) {
+            exibeResultado //(resultado[0].ID_USUARIO)
+        }
+    }
+
+    function exibeResultado(idResultado) {
+        let todosOsGraficos = JSON.parse(sessionStorage.RESULTADO);
+
+        for (i = 0; i < todosOsGraficos.length; i++) {
+            // exibindo - ou não - o gráfico
+            if (todosOsGraficos[i].sessionStorage.ID_USUARIO != idResultado) {
+                let elementoAtual = document.getElementById(`grafico${todosOsGraficos[i].sessionStorage.ID_USUARIO}`)
+                if (elementoAtual.classList.contains("display-block")) {
+                    elementoAtual.classList.remove("display-block")
+                }
+                elementoAtual.classList.add("display-none")
+            }
+
+            // exibindo - ou não - o gráfico
+            let graficoExibir = document.getElementById(`grafico${sessionStorage.ID_USUARIO}`)
+            graficoExibir.classList.remove("display-none")
+            graficoExibir.classList.add("display-block")
+
+        }
+    }
+
+    // O gráfico é construído com três funções:
+    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
+    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
+    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+
+    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
+    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
+    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+
+    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
+    //     Para ajustar o "select", ajuste o comando sql em src/models
+idResultado = sessionStorage.ID_USUARIO;    
+
+    function obterResultado() {
+        fetch("usuarios/obterResultado", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              //  pontosServer: pontos,
+               // acertoServer: acerto
+            })
+        }).then(function (resultadoObterResultado) {
+            console.log("ESTOU NO THEN DO obterResultado()!")
+
+            if (resultadoObterResultado.ok) {
+                console.log(resultadoObterResultado);
+
+                resultadoObterResultado.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.PONTOS = json.pontos;
+                    sessionStorage.ACERTO = json.acerto;
+
+                    console.log(`ALEGRIIIIAAAAA`)
+                });
+
+            } 
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+   
+    return false;
+ }
+      // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
+    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
+    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
+//     function plotarGrafico(resposta, idResultado) {
+
+// console.log('iniciando plotagem do gráfico...');
+
+// // Criando estrutura para plotar gráfico - labels
+// let labels = [];
+
+// // Criando estrutura para plotar gráfico - dados
+// let dados = {
+//     labels: labels,
+//     datasets: [
+//         {
+//         label: 'Umidade',
+//         data: [],
+//         fill: false,
+//         borderColor: 'rgb(75, 192, 192)',
+//         tension: 0.1
+//     },
+// ]
+// };
+
+// console.log('----------------------------------------------')
+// console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+// console.log(resposta)
+
+// // Inserindo valores recebidos em estrutura para plotar o gráfico
+// for (i = 0; i < resposta.length; i++) {
+//     var registro = resposta[i];
+//     labels.push(registro.momento_grafico);
+//     dados.datasets[0].data.push(registro.umidade);
+// }
+
+// console.log('----------------------------------------------')
+// console.log('O gráfico será plotado com os respectivos valores:')
+// console.log('Labels:')
+// console.log(labels)
+// console.log('Dados:')
+// console.log(dados.datasets)
+// console.log('----------------------------------------------')
+
+// // Criando estrutura para plotar gráfico - config
+// const config = {
+//     type: 'line',
+//     data: dados,
+// };
+
+// // Adicionando gráfico criado em div na tela
+// let myChart = new Chart(
+//     document.getElementById(`myChartCanvas${idResultado}`),
+//     config
+// );
+
+// setTimeout(() => atualizarGrafico(idResultado, dados, myChart), 2000);
+// }
+  //  }
+// fetch(`/usuarios/tempo-real/${idResultado}`, { cache: 'no-store' }).then(function (response) {
+//             if (response.ok) {
+//                 response.json().then(function (novoRegistro) {
+
+//                     obterdados(idResultado);
+//                     // alertar(novoRegistro, idResultado);
+//                     console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+//                     console.log(`Dados atuais do gráfico:`);
+//                     console.log(dados);
+
+//                     // let avisoCaptura = document.getElementById(`avisoCaptura${idAquario}`)
+//                     // avisoCaptura.innerHTML = ""
+
+
+//                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
+//                         console.log("---------------------------------------------------------------")
+//                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
+//                         avisoCaptura.innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
+//                         console.log("Horário do novo dado capturado:")
+//                         console.log(novoRegistro[0].momento_grafico)
+//                         console.log("Horário do último dado capturado:")
+//                         console.log(dados.labels[dados.labels.length - 1])
+//                         console.log("---------------------------------------------------------------")
+//                     } else {
+//                         // tirando e colocando valores no gráfico
+//                         dados.labels.shift(); // apagar o primeiro
+//                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+//                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
+//                         // dados.datasets[0].data.push(novoRegistro[0].umidade); // incluir uma nova medida de umidade
+
+//                         dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
+//                         dados.datasets[1].data.push(novoRegistro[0].lux); // incluir uma nova medida de temperatura
+
+//                         myChart.update();
+//                     }
+
+//                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+//                     proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 10000);
+//                 });
+//             } else {
+//                 console.error('Nenhum dado encontrado ou erro na API');
+//                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
+//                 proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados, myChart), 10000);
+//             }
+//         })
+//             .catch(function (error) {
+//                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+//             });
+</script>

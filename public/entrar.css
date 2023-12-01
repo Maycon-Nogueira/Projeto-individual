@@ -270,7 +270,7 @@ input{
     justify-content: center;
     border-radius: 7px;
     animation-name: animacao_alerta;
-    animation-duration: 0.5s;
+    animation-duration: 0.6 s;
     animation-fill-mode: none;
     animation-iteration-count: 1;
     padding: 7px;

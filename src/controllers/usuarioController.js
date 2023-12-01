@@ -21,27 +21,13 @@ function autenticar(req, res) {
                         console.log(resultadoAutenticar);
 
                         res.json({
-                            id: resultadoAutenticar[0].id,
-                            email: resultadoAutenticar[0].email,
-                            nome: resultadoAutenticar[0].nome,
-                            senha: resultadoAutenticar[0].senha
-
+                            id: resultadoAutenticar[0].idUsu,
+                            email: resultadoAutenticar[0].emailUsu,
+                            nome: resultadoAutenticar[0].nomeUsu,
+                            senha: resultadoAutenticar[0].senhaUsu
+                            
                         });
-
-                        // aquarioModel.buscarAquariosPorEmpresa(resultadoAutenticar[0].empresaId)
-                        //     .then((resultadoAquarios) => {
-                        //         if (resultadoAquarios.length > 0) {
-                        //             res.json({
-                        //                 id: resultadoAutenticar[0].id,
-                        //                 email: resultadoAutenticar[0].email,
-                        //                 nome: resultadoAutenticar[0].nome,
-                        //                 senha: resultadoAutenticar[0].senha
-                        //                 aquarios: resultadoAquarios
-                        //             });
-                        //         } else {
-                        //             res.status(204).json({ aquarios: [] });
-                        //         }
-                        // })
+                        
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -96,9 +82,6 @@ function cadastrar(req, res) {
 
 function inserirPontos(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var nome = req.body.nomeServer;
-    var email = req.body.emailServer;
-    var senha = req.body.senhaServer;
     var pontosUsuario = req.body.pontosUsuarioServer;
     var pontoPriPerg = req.body.pontoPriPergServer;
     var pontoSegPerg = req.body.pontoSegPergServer;
@@ -111,12 +94,6 @@ function inserirPontos(req, res) {
 
 
     // Faça as validações dos valores
-    // if (nome == undefined) {
-    //     res.status(400).send("Seu nome está undefined!");
-    // } else if (email == undefined) {
-    //     res.status(400).send("Seu email está undefined!");
-    // } else if (senha == undefined) {
-    //     res.status(400).send("Sua senha está undefined!");
      if (pontosUsuario == undefined) {
         res.status(400).send("Seu pontosUsuario está undefined!");
     } else if (pontoPriPerg == undefined) {
@@ -155,8 +132,32 @@ function inserirPontos(req, res) {
                 }
             );
 }
+
+// var usuarioModel = require("../models/usuarioModel");
+
+function obterResultado(req, res) {
+    console.log(`Estou no obter Resultado do controller`)
+    var pontos = req.body.pontosServer;
+    var acerto = req.body.acertoServer;
+
+        usuarioModel.obterResultado(pontos, acerto)
+            .then(
+                function (resultadoObterResultado) {
+                    console.log(`\nResultados encontrados: ${resultadoObterResultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultadoObterResultado)}`); // transforma JSON em String
+                    res.json(resultadoObterResultado)
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar a busca do resultado! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
 module.exports = {
     autenticar,
     cadastrar,
-    inserirPontos
+    inserirPontos,
+    obterResultado
 }

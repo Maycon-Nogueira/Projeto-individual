@@ -3,7 +3,7 @@ var database = require("../database/config")
 function autenticar(email, senha) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email, senha)
     var instrucao = `
-        SELECT nomeUsu, emailUsu, senhaUsu FROM usuario WHERE emailUsu = '${email}' AND senhaUsu = '${senha}';
+        SELECT idUsu, nomeUsu, emailUsu, senhaUsu FROM usuario WHERE emailUsu = '${email}' AND senhaUsu = '${senha}';
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -45,8 +45,22 @@ function inserirPontos(pontosUsuario, pontoPriPerg, pontoSegPerg, pontoTerPerg,
     return database.executar(instrucao);
 } // Mudar a fkUsu para o Id do usuario!!
 
+function obterResultado() {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ")
+
+    var instrucao = `
+    select nomeUsu, sum(pontos), sum(acerto)  from tentativa
+    join usuario
+    on tentativa.fkUsu = usuario.idUsu
+    group by nomeUsu;
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
 module.exports = {
     autenticar,
     cadastrar,
-    inserirPontos
+    inserirPontos,
+    obterResultado
 };
