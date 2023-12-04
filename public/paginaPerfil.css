@@ -57,6 +57,40 @@ body::-webkit-scrollbar-thumb {
     width: 55%;
     height: 80%;
     background-color: rgba(210, 105, 30, 0.458);
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+#div_recebeRank h2{
+    font-size: 37px;
+    color: #edf6f9;
+}
+
+.colocacoes{
+    width: 80%;
+    height: 10%;
+    background-color: rgb(210 105 30 / 94%);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: #edf6f9;
+}
+
+.bolaRank{
+    width: 90px;
+    height: 80px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7d0000;
+    position: absolute;
+    left: 364px;
 }
 
 #div_informacoes{
@@ -75,6 +109,7 @@ body::-webkit-scrollbar-thumb {
     width: 205px;
     height: 15%;
     background-color: rgba(210, 105, 30, 0.458);
+    border-radius: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -92,6 +127,51 @@ body::-webkit-scrollbar-thumb {
 a{
     text-decoration: none;
     color: #edf6f9;
+}
+
+#numSorte{
+    width: 40px;
+    height: 35px;
+    border-radius: 16%;
+    background: #b2230054;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+#explicaNum{
+    width: 172px;
+    height: 108px;
+    border-radius: 16%;
+    background: #132846;
+    position: absolute;
+    top: 137px;
+    left: 156px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 13px 19px;
+    visibility: hidden;
+    
+}
+
+#explicaNum:before{
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    left: -14px;
+    background-color: #132846;
+    top: 83px;
+    transform: rotate(45deg);
+}
+
+#numSorte:hover #explicaNum{
+    visibility: visible;
+    opacity: 0.8   ;
 }
 
 #foto_nome{

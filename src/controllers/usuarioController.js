@@ -4,6 +4,7 @@ var usuarioModel = require("../models/usuarioModel");
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
+    
 
     if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
@@ -82,7 +83,7 @@ function cadastrar(req, res) {
 
 function inserirPontos(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
-    var pontosUsuario = req.body.pontosUsuarioServer;
+    var idUsu = req.body.idUsuServer;
     var pontoPriPerg = req.body.pontoPriPergServer;
     var pontoSegPerg = req.body.pontoSegPergServer;
     var pontoTerPerg = req.body.pontoTerPergServer;
@@ -91,11 +92,11 @@ function inserirPontos(req, res) {
     var pontoSexPerg = req.body.pontoSexPergServer;
     var pontoSetPerg = req.body.pontoSetPergServer;
     var pontoOitPerg = req.body.pontoOitPergServer;
-
+    
 
     // Faça as validações dos valores
-     if (pontosUsuario == undefined) {
-        res.status(400).send("Seu pontosUsuario está undefined!");
+     if (idUsu == undefined) {
+        res.status(400).send("Seu idUsu está undefined!");
     } else if (pontoPriPerg == undefined) {
         res.status(400).send("Seu pontoPriPerg está undefined!");
     } else if (pontoSegPerg == undefined) {
@@ -115,7 +116,7 @@ function inserirPontos(req, res) {
     } else {}
     
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.inserirPontos(pontosUsuario, pontoPriPerg, pontoSegPerg, pontoTerPerg,
+        usuarioModel.inserirPontos(idUsu, pontoPriPerg, pontoSegPerg, pontoTerPerg,
              pontoQuaPerg, pontoQuiPerg, pontoSexPerg, pontoSetPerg, pontoOitPerg)
             .then(
                 function (resultado) {
@@ -137,13 +138,14 @@ function inserirPontos(req, res) {
 
 function obterResultado(req, res) {
     console.log(`Estou no obter Resultado do controller`)
-    var idUsuario = req.body.idUsuario;
+    var idUsuario = req.body.idUsuarioServer;
     var pontos = req.body.pontosServer;
     var acerto = req.body.acertoServer;
 
     console.log('Pontos:', pontos);
     console.log('Acerto:', acerto);
-        usuarioModel.obterResultado(pontos, acerto)
+    console.log(`IdUsuario`, idUsuario)
+        usuarioModel.obterResultado(pontos, acerto, idUsuario)
             .then(
                 function (resultadoObterResultado) {
                     console.log(`\nResultados encontrados: ${resultadoObterResultado.length}`);
@@ -162,9 +164,67 @@ function obterResultado(req, res) {
                 }
             );
     }
+
+    function buscaRank(req, res) {
+        console.log(`Estou no Busca rank do controller`)
+
+            usuarioModel.buscaRank()
+                .then(
+                    function (resultadoBuscaRank) {
+                        console.log(`\nResultados encontrados: ${resultadoBuscaRank.length}`);
+                        console.log(`Resultados: ${JSON.stringify(resultadoBuscaRank)}`); // transforma JSON em String
+                        
+                        res.json({
+                            priColocacao: resultadoBuscaRank[0].colocacao,
+                            segColocacao: resultadoBuscaRank[1].colocacao,
+                            terColocacao: resultadoBuscaRank[2].colocacao,
+                            quaColocacao: resultadoBuscaRank[3].colocacao,
+                            quiColocacao: resultadoBuscaRank[4].colocacao
+                        });
+                    }
+                ).catch(
+                    function (erro) {
+                        console.log(erro);
+                        console.log("\nHouve um erro ao realizar a busca do rank! Erro: ", erro.sqlMessage);
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
+        }
+
+        function registraNumSorte(req, res) {
+            // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+            var idUsuario = req.body.idUsuarioServer;
+            var numSorteado = req.body.numSorteadoServer;
+  
+                // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+                usuarioModel.registraNumSorte(idUsuario, numSorteado)
+                    .then(
+                        // function (resultadoNumRegistrado) {
+                        //     console.log(`\nResultados encontrados: ${resultadoNumRegistrado.length}`);
+                        //     console.log(`Resultados: ${JSON.stringify(resultadoNumRegistrado)}`); // transforma JSON em String
+                            
+                        //     res.json({
+                        //         numSorteado: resultadoNumRegistrado[0].resultadoNumRegistrado
+                        //         // quaColocacao: resultadoBuscaRank[3].colocacao,
+                        //     });
+                        // }
+                    ).catch(
+                        function (erro) {
+                            console.log(erro);
+                            console.log(
+                                "\nHouve um erro ao realizar a inserção do numero da sorte! Erro: ",
+                                erro.sqlMessage
+                            );
+                            res.status(500).json(erro.sqlMessage);
+                        }
+                    );
+        }
+
 module.exports = {
     autenticar,
     cadastrar,
     inserirPontos,
-    obterResultado
+    obterResultado,
+    buscaRank,
+    registraNumSorte
 }

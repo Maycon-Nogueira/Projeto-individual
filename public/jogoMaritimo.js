@@ -1,3 +1,14 @@
+window.onload = verificaId
+
+
+function verificaId(){
+if( sessionStorage.ID_USUARIO == undefined) {
+window.location = `/entrar.html`
+} else {
+    recebe_usuario.innerHTML = `<div class="area "><a id="recebe_usuario" href="perfilUsuario.HTML"> ${sessionStorage.NOME_USUARIO} </a></div>` 
+}
+}
+
 // Seção Jogos
 
 // recebe_usuario.innerHTML = sessionStorage.NOME_USUARIO;
@@ -411,7 +422,7 @@ function alternativa_escolhida(alternativaEscolhida) {
     configurarListeners();
 }
 
-var pontosUsuario = 0;
+var idUsu = sessionStorage.ID_USUARIO;
 var pontoPriPerg = 0;
 var pontoSegPerg = 0;
 var pontoTerPerg = 0
@@ -425,42 +436,34 @@ function verificarResposta(resposta, rotacao_geral) {
 
     if (resposta == " Baleia Jubarte " && rotacao_geral == 1) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 1;
         pontoPriPerg = 1;
 
     } else if (resposta == " Pinguim " && rotacao_geral == 2) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 4;
         pontoSegPerg = 1;
 
     } else if (resposta == " Dory " && rotacao_geral == 3) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 1;
         pontoTerPerg = 1;
 
     } else if (resposta == " Morsa " && rotacao_geral == 4) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 2;
         pontoQuaPerg = 1;
 
     } else if (resposta == " Foca " && rotacao_geral == 5) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 1;
         pontoQuiPerg = 1;
 
     } else if (resposta == " Golfinho " && rotacao_geral == 6) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 1;
         pontoSexPerg = 1;
 
     } else if (resposta == " Orcas " && rotacao_geral == 7) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 2;
         pontoSetPerg = 1;
 
     } else if (resposta == " Peixe palhaço " && rotacao_geral == 8) {
         acerto_erro.innerHTML = `Certo`
-        pontosUsuario += 8;
         pontoOitPerg = 1;
     };
 
@@ -476,7 +479,7 @@ function verificarResposta(resposta, rotacao_geral) {
                 // Agora vá para o arquivo routes/usuario.js
             // emailServer: email,
             // senhaServer: senha,
-            pontosUsuarioServer: pontosUsuario,
+            idUsuServer: idUsu,
             pontoPriPergServer: pontoPriPerg,
             pontoSegPergServer: pontoSegPerg,
             pontoTerPergServer: pontoTerPerg,

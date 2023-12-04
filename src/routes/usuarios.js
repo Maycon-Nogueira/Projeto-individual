@@ -20,4 +20,12 @@ router.post("/obterResultado", function (req, res) {
     usuarioController.obterResultado(req, res);
 });
 
+router.post("/buscaRank", function (req, res) {
+    usuarioController.buscaRank(req, res);
+});
+
+router.post("/registraNumSorte", function (req, res) {
+    usuarioController.registraNumSorte(req, res);
+});
+
 module.exports = router;
